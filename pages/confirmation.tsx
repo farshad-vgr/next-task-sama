@@ -7,7 +7,7 @@ export default function Confirmation() {
 				<title>کد تایید</title>
 			</Head>
 
-			<div style={{ minHeight: "500px" }}>صفحه کد تایید</div>
+			<div className="h-[85vh] bg-mainBackground bg-cover bg-no-repeat">صفحه کد تایید</div>
 		</>
 	);
 }

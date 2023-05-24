@@ -7,7 +7,7 @@ export default function Booking() {
 				<title>نوبت دهی</title>
 			</Head>
 
-			<div style={{ minHeight: "500px" }}>صفحه نوبت دهی</div>
+			<div className="h-[85vh] bg-mainBackground bg-cover bg-no-repeat">صفحه نوبت دهی</div>
 		</>
 	);
 }

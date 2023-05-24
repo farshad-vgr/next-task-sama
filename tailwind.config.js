@@ -10,6 +10,9 @@ module.exports = {
 			...defaultTheme.screens,
 		},
 		extend: {
+			backgroundImage: {
+				mainBackground: "url('/assets/images/bgMain.jpg')",
+			},
 		},
 	},
 	plugins: [],
