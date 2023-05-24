@@ -10,7 +10,7 @@ interface Props {
 export default function NavbarItem({ href, svgPathD1, svgPathD2, textContent }: Props) {
 	return (
 		<>
-			<li className="text-lg hover:text-red-800 hover:underline">
+			<li className="text-lg hover:text-red-700 hover:underline">
 				<Link href={href}>
 					<span className="flex gap-1">
 						<svg

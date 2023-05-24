@@ -36,7 +36,7 @@ export default function Navbar({ direction }: Props) {
 	return (
 		<>
 			<nav>
-				<ul className={`flex ${direction} gap-5 sm:gap-10 md:gap-16 text-xl text-slate-600`}>
+				<ul className={`flex ${direction} gap-5 sm:gap-10 md:gap-16 text-md text-slate-200 sm:text-slate-600`}>
 					{itemsContent.map(({ id, href, svgPathD1, svgPathD2, textContent }) => {
 						return <NavbarItem key={id} href={href} svgPathD1={svgPathD1} svgPathD2={svgPathD2} textContent={textContent} />;
 					})}
