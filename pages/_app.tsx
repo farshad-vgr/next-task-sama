@@ -1,15 +1,12 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Script from "next/script";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import { Layout } from "../components";
 
 import "@/styles/globals.css";
 
-const roboto = Roboto({
-	weight: "400",
-	subsets: [],
-});
+// Font files can be colocated inside of `pages`
+const iranSansFont = localFont({ src: "../public/assets/fonts/IRANSansMobile_Medium.ttf" });
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
@@ -20,11 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
 				<link rel="icon" href="/public/favicon.ico" />
 			</Head>
 
-			<Layout>
-				<main className={roboto.className}>
+			<main className={iranSansFont.className}>
+				<Layout>
 					<Component {...pageProps} />
-				</main>
-			</Layout>
+				</Layout>
+			</main>
 		</>
 	);
 }

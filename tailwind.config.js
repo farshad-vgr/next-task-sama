@@ -10,10 +10,6 @@ module.exports = {
 			...defaultTheme.screens,
 		},
 		extend: {
-			backgroundImage: {
-				headerBackground: "url('/assets/images/newsletter.png')",
-				footerBackground: "url('/assets/images/landscape.png')",
-			},
 		},
 	},
 	plugins: [],
