@@ -4,10 +4,10 @@ export default function Booking() {
 	return (
 		<>
 			<Head>
-				<title>Booking</title>
+				<title>نوبت دهی</title>
 			</Head>
 
-			<div style={{ minHeight: "500px" }}>This is for test BOOKING page</div>
+			<div style={{ minHeight: "500px" }}>صفحه نوبت دهی</div>
 		</>
 	);
 }

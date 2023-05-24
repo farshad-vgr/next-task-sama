@@ -6,14 +6,14 @@ import LogoImage from "../../public/assets/images/logo.png";
 export default function Header() {
 	return (
 		<>
-			<header className={`w-full h-[4rem] sm:h-[8rem] bg-headerBackground bg-cover bg-center bg-no-repeat bg-opacity-20`}>
-				<div className="w-full h-[4rem] sm:h-[8rem] bg-black bg-opacity-30">
+			<header className="w-full h-[4rem] sm:h-[8rem]">
+				<div className="w-full h-[4rem] sm:h-[8rem] bg-slate-200">
 					<Container>
 						<div className="absolute top-3 left-5">
-							<Image src={LogoImage} alt="Logo" />
+							<Image src={LogoImage} width={200} height={100} alt="Logo" />
 						</div>
 
-						<div className="mt-14 hidden sm:block">
+						<div className="hidden mt-14 sm:block">
 							<Navbar direction="flex-row" />
 						</div>
 

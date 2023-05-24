@@ -5,10 +5,10 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Home</title>
+				<title>ثبت نام</title>
 			</Head>
 
-			<div style={{ minHeight: "500px" }}>This is for test HOME page</div>
+			<div style={{ minHeight: "500px" }}>صفحه ثبت نام</div>
 		</>
 	);
 }
