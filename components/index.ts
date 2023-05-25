@@ -18,3 +18,7 @@ export { default as Asidebar } from "./Asidebar/Asidebar";
 export { default as Footer } from "./Footer/Footer";
 export { default as CopyRight } from "./CopyRight/CopyRight";
 export { default as JumperButton } from "./JumperButton/JumperButton";
+export { default as FormHeader } from "./FormHeader/FormHeader";
+export { default as UsernameInput } from "./UsernameInput/UsernameInput";
+export { default as PasswordInput } from "./PasswordInput/PasswordInput";
+export { default as SubmitButton } from "./SubmitButton/SubmitButton";
