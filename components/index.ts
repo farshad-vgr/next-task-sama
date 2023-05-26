@@ -21,5 +21,6 @@ export { default as JumperButton } from "./JumperButton/JumperButton";
 export { default as SignupForm } from "./SignupForm/SignupForm";
 export { default as FormHeader } from "./FormHeader/FormHeader";
 export { default as SignupInput } from "./SignupInput/SignupInput";
+export { default as CaptchaBox } from "./CaptchaBox/CaptchaBox";
 export { default as CaptchaInput } from "./CaptchaInput/CaptchaInput";
 export { default as SubmitButton } from "./SubmitButton/SubmitButton";

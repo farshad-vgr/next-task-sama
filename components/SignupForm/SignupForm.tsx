@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { SignupInput, CaptchaInput, SubmitButton } from "@/components";
+import { SignupInput, CaptchaBox, CaptchaInput, SubmitButton } from "@/components";
 
 const SignupForm = () => {
 	return (
@@ -12,6 +12,8 @@ const SignupForm = () => {
 					e.preventDefault();
 				}}>
 				<SignupInput username="" placeHolder="کدملی / شماره موبایل / شماره قبض" />
+
+				<CaptchaBox />
 
 				<CaptchaInput username="" placeHolder="کد امنیتی به عدد" />
 
