@@ -17,7 +17,7 @@ const CaptchaBox = ({ setIsDisable, inputValue }) => {
 				secret_key: "ehq31ra94lqjj2cvy76r",
 			})
 			.then((response) => {
-				console.log("resdata: " + response.data);
+				console.log("resdata: " + response);
 			})
 			.catch((error) => {
 				console.log(error);
