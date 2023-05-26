@@ -12,6 +12,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
+    "arcaptcha-react": "^0.2.7",
     "axios": "^1.4.0",
     "eslint": "8.37.0",
     "eslint-config-next": "13.3.0",
