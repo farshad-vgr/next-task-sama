@@ -18,3 +18,14 @@ body::-webkit-scrollbar-thumb {
 	outline: none;
 	background-color: gray;
 }
+
+/*---------------------------- Hiding the arrow button from the type=number inputs: */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+input[type="number"] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+	/* Firefox */
+}

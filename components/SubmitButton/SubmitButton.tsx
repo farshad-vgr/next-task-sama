@@ -9,8 +9,8 @@ const SubmitButton = ({ btnText, isDisable }: Props): JSX.Element => {
 	return (
 		<>
 			<button
-				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit py-2 px-3 outline-none rounded-lg text-white ${
-					isDisable ? "cursor-not-allowed bg-slate-400 opacity-50" : "cursor-pointer bg-green-500"
+				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit py-2 px-3 outline-none rounded-lg ${
+					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-green-500"
 				}`}
 				type="submit"
 				disabled={isDisable}>

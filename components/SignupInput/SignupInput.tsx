@@ -1,11 +1,12 @@
 import React, { memo } from "react";
 
 interface Props {
-	username: string;
+	inputValue: string;
+	setInputValue: (e: string) => void;
 	placeHolder: string;
 }
 
-const SignupInput = ({ username, placeHolder }: Props): JSX.Element => {
+const SignupInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Element => {
 	return (
 		<>
 			<section>
@@ -23,12 +24,13 @@ const SignupInput = ({ username, placeHolder }: Props): JSX.Element => {
 					<input
 						className="py-2 px-4 pr-10 pb-0 w-full h-8 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
 						autoFocus
-						type="text"
+						required
+						type="number"
 						placeholder={placeHolder}
 						minLength={3}
 						maxLength={15}
-						value={username}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => console.log("test")}
+						value={inputValue}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
 					/>
 				</div>
 			</section>

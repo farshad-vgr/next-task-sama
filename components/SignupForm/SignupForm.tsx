@@ -5,6 +5,7 @@ import { SignupInput, CaptchaBox, CaptchaInput, SubmitButton } from "@/component
 
 const SignupForm = () => {
 	const router = useRouter();
+	const [inputValue, setInputValue] = useState("");
 	const [isDisable, setIsDisable] = useState(true);
 
 	return (
@@ -13,11 +14,12 @@ const SignupForm = () => {
 				className="flex flex-col justify-center gap-4 w-full"
 				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 					e.preventDefault();
-					router.push("/confirmation");
+					inputValue.trim() !== "" ? router.push("/confirmation") : alert("فرم را پر کنید!");
+					console.log("input value: " + inputValue);
 				}}>
-				<SignupInput username="" placeHolder="کدملی / شماره موبایل / شماره قبض" />
+				<SignupInput inputValue={inputValue} setInputValue={setInputValue} placeHolder="کدملی / شماره موبایل / شماره قبض" />
 
-				<CaptchaBox setIsDisable={setIsDisable} />
+				<CaptchaBox setIsDisable={setIsDisable} inputValue={inputValue} />
 
 				{/* <CaptchaInput username="" placeHolder="کد امنیتی به عدد" /> */}
 
