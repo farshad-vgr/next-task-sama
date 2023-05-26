@@ -9,7 +9,7 @@ const CaptchaBox = (): JSX.Element => {
 	return (
 		<>
 			<section>
-				<div className="relative flex justify-center w-full h-20 overflow-hidden">
+				<div className="relative flex justify-center w-full h-64 overflow-hidden">
 					<div className="flex justify-center items-center absolute right-0 w-8 h-full outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,9 @@ const CaptchaBox = (): JSX.Element => {
 						</svg>
 					</div>
 
-					<div className="py-2 px-4 pr-10 pb-0 w-full outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0] bg-slate-300"></div>
+					<div className="py-2 px-4 pr-10 pb-0 w-full outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0] bg-slate-300">
+						<div className="arcaptcha" data-site-key="i6qqnsxay6"></div>
+					</div>
 
 					<div className="flex justify-center items-center absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 outline-none text-red-700 hover:rotate-180 hover:scale-125 rounded-full cursor-pointer duration-500">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">

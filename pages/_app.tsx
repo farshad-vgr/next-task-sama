@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import localFont from "next/font/local";
 import { Layout } from "../components";
 
@@ -22,6 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
 					<Component {...pageProps} />
 				</Layout>
 			</main>
+
+			{/* This script is for captcha */}
+			<Script src="https://widget.arcaptcha.ir/1/api.js" async defer></Script>
 		</>
 	);
 }
