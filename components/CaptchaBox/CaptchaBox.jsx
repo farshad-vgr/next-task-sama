@@ -7,7 +7,7 @@ class CaptchaBox extends Component {
 		this.ArRef = React.createRef();
 	}
 	getToken = (token) => {
-		//do something with your token.
+		console.log(token);
 	};
 	render() {
 		return (
