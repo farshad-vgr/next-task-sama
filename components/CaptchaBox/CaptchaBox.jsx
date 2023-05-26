@@ -1,12 +1,27 @@
 import { useRef, memo } from "react";
 import { ArcaptchaWidget } from "arcaptcha-react";
+import axios from "axios";
 
 const CaptchaBox = ({ setIsDisable, inputValue }) => {
 	const ArRef = useRef();
-	console.log(ArRef.current);
 
 	const getToken = (token) => {
 		token ? setIsDisable(false) : null;
+
+		console.log("mytoken: " + token);
+
+		axios
+			.post("https://api.arcaptcha.co/arcaptcha/api/verify", {
+				challenge_id: token,
+				site_key: "i6qqnsxay6",
+				secret_key: "ehq31ra94lqjj2cvy76r",
+			})
+			.then((response) => {
+				console.log("resdata: " + response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	return (
