@@ -2,12 +2,18 @@ import React, { memo } from "react";
 
 interface Props {
 	btnText: string;
+	isDisable: boolean;
 }
 
-const SubmitButton = ({ btnText }: Props): JSX.Element => {
+const SubmitButton = ({ btnText, isDisable }: Props): JSX.Element => {
 	return (
 		<>
-			<button className="submit-btn flex justify-center items-center self-center gap-1 max-w-fit py-2 px-3 outline-none rounded-lg text-white bg-green-500" type="submit">
+			<button
+				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit py-2 px-3 outline-none rounded-lg text-white ${
+					isDisable ? "cursor-not-allowed bg-slate-400 opacity-50" : "cursor-pointer bg-green-500"
+				}`}
+				type="submit"
+				disabled={isDisable}>
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 					<path
 						strokeLinecap="round"
