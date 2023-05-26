@@ -1,21 +1,19 @@
-import React, { Component } from "react";
+import { useRef } from "react";
 import { ArcaptchaWidget } from "arcaptcha-react";
 
-class CaptchaBox extends Component {
-	constructor() {
-		super();
-		this.ArRef = React.createRef();
-	}
-	getToken = (token) => {
-		console.log(token);
+const CaptchaBox = () => {
+	const ArRef = useRef();
+
+	const getToken = (token) => {
+		token ? console.log("this is token: " + token) : console.log("no token yet!");
 	};
-	render() {
-		return (
+	return (
+		<>
 			<div>
-				<ArcaptchaWidget ref={this.ArRef} site-key="i6qqnsxay6" callback={this.getToken} />
+				<ArcaptchaWidget ref={ArRef} site-key="i6qqnsxay6" callback={getToken} />
 			</div>
-		);
-	}
-}
+		</>
+	);
+};
 
 export default CaptchaBox;
