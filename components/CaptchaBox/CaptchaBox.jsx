@@ -6,10 +6,6 @@ const CaptchaBox = ({ setIsDisable, inputValue }) => {
 	const ArRef = useRef();
 
 	const getToken = (token) => {
-		token ? setIsDisable(false) : null;
-
-		console.log("mytoken: " + token);
-
 		axios
 			.post("https://api.arcaptcha.co/arcaptcha/api/verify", {
 				challenge_id: token,
@@ -17,7 +13,7 @@ const CaptchaBox = ({ setIsDisable, inputValue }) => {
 				secret_key: "ehq31ra94lqjj2cvy76r",
 			})
 			.then((response) => {
-				console.log("resdata: " + response.data.success);
+				response.data.success ? setIsDisable(false) : null;
 			})
 			.catch((error) => {
 				console.log(error);
