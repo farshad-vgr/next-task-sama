@@ -17,7 +17,7 @@ const SignupForm = () => {
 				}}>
 				<SignupInput username="" placeHolder="کدملی / شماره موبایل / شماره قبض" />
 
-				<CaptchaBox />
+				<CaptchaBox setIsDisable={setIsDisable} />
 
 				{/* <CaptchaInput username="" placeHolder="کد امنیتی به عدد" /> */}
 
