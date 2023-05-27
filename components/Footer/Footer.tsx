@@ -4,7 +4,7 @@ export default function Footer() {
 	return (
 		<>
 			<footer className="w-full h-14 py-1">
-				<div className="w-full h-full text-white bg-black">
+				<div className="w-full h-full text-white bg-slate-600">
 					<Container>
 						<CopyRight />
 					</Container>
