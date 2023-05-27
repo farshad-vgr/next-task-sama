@@ -6,14 +6,14 @@ import LogoImage from "../../public/assets/images/logo.png";
 export default function Header() {
 	return (
 		<>
-			<header className="w-full h-[4.25rem] bg-slate-200">
+			<header className="w-full h-[4.5rem] bg-slate-200">
 				<div>
 					<Container>
-						<div className="hidden sm:block absolute top-3 left-5">
+						<div className="hidden sm:block absolute top-1 left-1">
 							<SearchButton />
 						</div>
 
-						<div className="hidden sm:block sm:absolute sm:top-6 sm:mr-6">
+						<div className="hidden sm:block sm:absolute sm:top-12 sm:mr-6">
 							<Navbar direction="flex-row" />
 						</div>
 
