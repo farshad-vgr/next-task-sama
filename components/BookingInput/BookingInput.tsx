@@ -1,12 +1,12 @@
 import React, { memo } from "react";
 
 interface Props {
-	inputValue: string;
-	setInputValue: (e: string) => void;
+	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; dateBooking: string; formCompleted: boolean; formDownloadable: boolean };
+	setBookingFormValues: any;
 	placeHolder: string;
 }
 
-const BookingInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Element => {
+const BookingInput = ({ bookingFormValues, setBookingFormValues, placeHolder }: Props): JSX.Element => {
 	return (
 		<>
 			<section>
@@ -25,12 +25,12 @@ const BookingInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.El
 						className="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
 						autoFocus
 						required
-						type="number"
+						type="text"
 						placeholder={placeHolder}
 						minLength={3}
 						maxLength={15}
-						value={inputValue}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
+						value={bookingFormValues.firstName}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBookingFormValues({...bookingFormValues, firstName: e.target.value})}
 					/>
 				</div>
 			</section>
