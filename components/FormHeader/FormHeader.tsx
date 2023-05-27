@@ -12,7 +12,7 @@ const FormHeader = ({ formTitle, imageSrc, imageWidth, imageHeight }: Props) => 
 	return (
 		<>
 			<section className="flex flex-col justify-center items-center gap-2">
-				<h1 className="cursor-default">{formTitle}</h1>
+				<h1 className="cursor-default p-1">{formTitle}</h1>
 
 				<Image src={imageSrc} width={imageWidth} height={imageHeight} alt="Logo" />
 			</section>
