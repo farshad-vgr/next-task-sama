@@ -22,7 +22,7 @@ const SignupInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Ele
 					</div>
 
 					<input
-						className="py-2 px-4 pr-10 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
+						className="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
 						autoFocus
 						required
 						type="number"
