@@ -9,10 +9,10 @@ const BookingButton = ({ btnText, isDisable }: Props): JSX.Element => {
 	return (
 		<>
 			<button
+				type="submit"
 				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg ${
 					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-green-500"
 				}`}
-				type="submit"
 				disabled={isDisable}>
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 					<path

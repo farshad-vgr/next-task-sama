@@ -28,3 +28,4 @@ export { default as CaptchaBox } from "./CaptchaBox/CaptchaBox";
 export { default as SubmitButton } from "./SubmitButton/SubmitButton";
 export { default as ConfirmButton } from "./ConfirmButton/ConfirmButton";
 export { default as BookingButton } from "./BookingButton/BookingButton";
+export { default as GeneratePdf } from "./GeneratePDF/GeneratePDF";
