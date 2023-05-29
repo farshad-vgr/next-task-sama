@@ -1,12 +1,20 @@
 import React, { memo } from "react";
 
 interface Props {
-	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; dateBooking: string; formCompleted: boolean; formDownloadable: boolean };
+	bookingFormValues: {
+		firstName: string;
+		lastName: string;
+		gender: string;
+		insurance: boolean;
+		dateBooking: string;
+		formCompleted: boolean;
+		formDownloadable: boolean;
+	};
 	setBookingFormValues: any;
 	placeHolder: string;
 }
 
-const BookingInput = ({ bookingFormValues, setBookingFormValues, placeHolder }: Props): JSX.Element => {
+const BookingFirstName = ({ bookingFormValues, setBookingFormValues, placeHolder }: Props): JSX.Element => {
 	return (
 		<>
 			<section>
@@ -23,14 +31,13 @@ const BookingInput = ({ bookingFormValues, setBookingFormValues, placeHolder }: 
 
 					<input
 						className="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
-						autoFocus
 						required
 						type="text"
 						placeholder={placeHolder}
 						minLength={3}
 						maxLength={15}
-						value={bookingFormValues.firstName}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBookingFormValues({...bookingFormValues, firstName: e.target.value})}
+						value={bookingFormValues.lastName}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBookingFormValues({ ...bookingFormValues, lastName: e.target.value })}
 					/>
 				</div>
 			</section>
@@ -38,4 +45,4 @@ const BookingInput = ({ bookingFormValues, setBookingFormValues, placeHolder }: 
 	);
 };
 
-export default memo(BookingInput);
+export default memo(BookingFirstName);
