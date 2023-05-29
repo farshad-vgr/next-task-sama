@@ -7,7 +7,6 @@ interface Props {
 		gender: string;
 		insurance: boolean;
 		dateBooking: string;
-		formCompleted: boolean;
 		formDownloadable: boolean;
 	};
 	setBookingFormValues: any;
@@ -18,7 +17,7 @@ const BookingGender = ({ bookingFormValues, setBookingFormValues }: Props): JSX.
 		<>
 			<section>
 				<div className="relative flex justify-start w-full overflow-hidden">
-					<label htmlFor="cars" className="me-2">
+					<label className="me-2">
 						جنسیت:
 					</label>
 

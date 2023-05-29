@@ -7,7 +7,6 @@ interface Props {
 		gender: string;
 		insurance: boolean;
 		dateBooking: string;
-		formCompleted: boolean;
 		formDownloadable: boolean;
 	};
 	setBookingFormValues: any;

@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 
 interface Props {
-	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; dateBooking: string; formCompleted: boolean; formDownloadable: boolean };
+	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; dateBooking: string; formDownloadable: boolean };
 	setBookingFormValues: any;
 	placeHolder: string;
 }

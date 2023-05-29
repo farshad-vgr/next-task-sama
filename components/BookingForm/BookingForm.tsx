@@ -1,7 +1,7 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-import { BookingFirstName, BookingLastName, BookingGender, BookingButton } from "@/components";
+import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, BookingButton } from "@/components";
 
 const GeneratePDF = dynamic(() => import("../GeneratePDF/GeneratePDF"), { ssr: false });
 
@@ -11,7 +11,6 @@ const initialStates = {
 	gender: "male",
 	insurance: false,
 	dateBooking: "",
-	formCompleted: false,
 	formDownloadable: false,
 };
 
@@ -27,7 +26,7 @@ const BookingForm = () => {
 				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 					e.preventDefault();
 					console.table(bookingFormValues);
-					bookingFormValues.formCompleted ? alert("نوبت برای شما ثبت گردید") : alert("لطفا اطلاعات فرم را تکمیل کنید!");
+					alert("نوبت برای شما ثبت گردید");
 					setBookingFormValues({ ...bookingFormValues, formDownloadable: true });
 				}}>
 				<BookingFirstName bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="نام" />
@@ -36,7 +35,12 @@ const BookingForm = () => {
 
 				<BookingGender bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} />
 
-				<BookingButton btnText="ثبت نوبت" isDisable={bookingFormValues.firstName.length > 0 ? (bookingFormValues.lastName.length > 0 ? false : true) : true} />
+				<BookingInsurance bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} />
+
+				<BookingButton
+					btnText="ثبت نوبت"
+					isDisable={bookingFormValues.firstName.length > 0 ? (bookingFormValues.lastName.length > 0 ? false : true) : true}
+				/>
 
 				<GeneratePDF btnText="دانلود فرم" isDisable={!bookingFormValues.formDownloadable} formData={ref} />
 			</form>
