@@ -10,11 +10,11 @@ interface Props {
 
 const GeneratePdf = ({ btnText, isDisable, formData }: Props) => {
 	const downloadForm = async () => {
-		const image = await toPng(formData.current, { quality: 1 });
-		const doc = new jsPDF();
+		const screenImage = await toPng(formData.current, { quality: 1 });
+		const pdfFile = new jsPDF();
 
-		doc.addImage(image, "PNG", 30, 20, 160, 130);
-		doc.save("فرم نوبت");
+		pdfFile.addImage(screenImage, "PNG", 30, 20, 160, 130);
+		pdfFile.save("فرم نوبت");
 	};
 
 	return (
