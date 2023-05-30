@@ -13,7 +13,7 @@ const GeneratePdf = ({ btnText, isDisable, formData }: Props) => {
 		const image = await toPng(formData.current, { quality: 1 });
 		const doc = new jsPDF();
 
-		doc.addImage(image, "PNG", 30, 10, 160, 50);
+		doc.addImage(image, "PNG", 30, 20, 160, 130);
 		doc.save("فرم نوبت");
 	};
 

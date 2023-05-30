@@ -1,7 +1,7 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, BookingButton } from "@/components";
+import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, BookingDatePicker, BookingButton } from "@/components";
 
 const GeneratePDF = dynamic(() => import("../GeneratePDF/GeneratePDF"), { ssr: false });
 
@@ -36,6 +36,8 @@ const BookingForm = () => {
 				<BookingGender bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} />
 
 				<BookingInsurance bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} />
+
+				<BookingDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" />
 
 				<BookingButton
 					btnText="ثبت نوبت"
