@@ -20,7 +20,7 @@ const BookingInsurance = ({ bookingFormValues, setBookingFormValues }: Props): J
 					<label className="me-2">بیمه درمانی:</label>
 
 					<input
-						className="me-1"
+						className="me-1 mb-2 accent-red-700"
 						type="radio"
 						id="false"
 						name="insurance"
@@ -33,7 +33,7 @@ const BookingInsurance = ({ bookingFormValues, setBookingFormValues }: Props): J
 					</label>
 
 					<input
-						className="me-1"
+						className="me-1 mb-2 accent-red-700"
 						type="radio"
 						id="true"
 						name="insurance"

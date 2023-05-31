@@ -17,12 +17,10 @@ const BookingGender = ({ bookingFormValues, setBookingFormValues }: Props): JSX.
 		<>
 			<section>
 				<div className="relative flex justify-start w-full overflow-hidden">
-					<label className="me-2">
-						جنسیت:
-					</label>
+					<label className="me-2">جنسیت:</label>
 
 					<input
-						className="me-1"
+						className="me-1 mb-1 accent-red-700"
 						type="radio"
 						id="male"
 						name="gender"
@@ -35,7 +33,7 @@ const BookingGender = ({ bookingFormValues, setBookingFormValues }: Props): JSX.
 					</label>
 
 					<input
-						className="me-1"
+						className="me-1 mb-1 accent-red-700"
 						type="radio"
 						id="female"
 						name="gender"

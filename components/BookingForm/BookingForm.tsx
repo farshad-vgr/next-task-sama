@@ -37,7 +37,7 @@ const BookingForm = () => {
 
 				<BookingInsurance bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} />
 
-				<BookingDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" />
+				{/* <BookingDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" /> */}
 
 				<PersianDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" />
 

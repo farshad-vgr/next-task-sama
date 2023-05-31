@@ -3,6 +3,8 @@ import DatePicker, { DateObject } from "react-multi-date-picker";
 import persianCalendar from "react-date-object/calendars/persian";
 import persianLanguage from "react-date-object/locales/persian_fa";
 
+import "react-multi-date-picker/styles/colors/red.css";
+
 interface Props {
 	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; dateBooking: string; formDownloadable: boolean };
 	setBookingFormValues: any;
@@ -35,6 +37,7 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 				<label className="pr-12 pt-2 text-gray-400">{placeHolder}</label>
 
 				<DatePicker
+					className="red"
 					value={value}
 					onChange={handleChange}
 					calendar={persianCalendar}
@@ -44,7 +47,8 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 					placeholder={placeHolder}
 					calendarPosition="top"
 					style={{
-						width: "8rem",
+            width: "8rem",
+            height: "1.75rem",
 						textAlign: "center",
 						outline: "none",
 						background: "none",
