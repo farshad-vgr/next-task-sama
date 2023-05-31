@@ -28,6 +28,7 @@ export { default as BookingLastName } from "./BookingLastName/BookingLastName";
 export { default as BookingGender } from "./BookingGender/BookingGender";
 export { default as BookingInsurance } from "./BookingInsurance/BookingInsurance";
 export { default as BookingDatePicker } from "./BookingDatePicker/BookingDatePicker";
+export { default as PersianDatePicker } from "./BookingDatePicker/PersianDatePicker";
 export { default as CaptchaBox } from "./CaptchaBox/CaptchaBox";
 export { default as SubmitButton } from "./SubmitButton/SubmitButton";
 export { default as ConfirmButton } from "./ConfirmButton/ConfirmButton";

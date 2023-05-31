@@ -1,7 +1,7 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, BookingDatePicker, BookingButton } from "@/components";
+import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, BookingDatePicker, PersianDatePicker, BookingButton } from "@/components";
 
 const GeneratePDF = dynamic(() => import("../GeneratePDF/GeneratePDF"), { ssr: false });
 
@@ -39,9 +39,11 @@ const BookingForm = () => {
 
 				<BookingDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" />
 
+				<PersianDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" />
+
 				<BookingButton
 					btnText="ثبت نوبت"
-					isDisable={bookingFormValues.firstName.length > 0 ? (bookingFormValues.lastName.length > 0 ? false : true) : true}
+					isDisable={bookingFormValues.firstName.length > 0 ? (bookingFormValues.lastName.length > 0 ? (bookingFormValues.dateBooking.length > 0 ? false : true) : true) : true}
 				/>
 
 				<GeneratePDF btnText="دانلود فرم" isDisable={!bookingFormValues.formDownloadable} formData={ref} />
