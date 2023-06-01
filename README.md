@@ -1,7 +1,7 @@
 # authentication-booking-form
 <h3>Hello guys</h3>
-<p>This is a authentication and booking form with some features</p>
-<p>I appreciate it if you contribute to this project and add other options and more themes or colors to this list. Thanx!</p>
+<p>This is an authentication and booking form with some features</p>
+<p>I appreciate it if you contribute to this project and add other options and more themes or colors to this form. Thanx!</p>
 
 ### * Languages and Tools:
 <p align="left">
