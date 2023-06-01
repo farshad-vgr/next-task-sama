@@ -6,7 +6,7 @@ import persianLanguage from "react-date-object/locales/persian_fa";
 import "react-multi-date-picker/styles/colors/red.css";
 
 interface Props {
-	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; dateBooking: string; formDownloadable: boolean };
+	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; date: string; };
 	setBookingFormValues: any;
 	placeHolder: string;
 }
@@ -18,7 +18,7 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 	function handleChange(value: DateObject) {
 		setValue(value);
 		setDateColor("black");
-		setBookingFormValues({ ...bookingFormValues, dateBooking: value.toDate().toLocaleDateString("fa-IR") });
+		setBookingFormValues({ ...bookingFormValues, date: value.toDate().toLocaleDateString("fa-IR") });
 	}
 
 	return (

@@ -1,7 +1,7 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, BookingDatePicker, PersianDatePicker, BookingButton } from "@/components";
+import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, PersianDatePicker, BookingButton } from "@/components";
 
 const GeneratePDF = dynamic(() => import("../GeneratePDF/GeneratePDF"), { ssr: false });
 
@@ -10,12 +10,12 @@ const initialStates = {
 	lastName: "",
 	gender: "male",
 	insurance: false,
-	dateBooking: "",
-	formDownloadable: false,
+	date: "",
 };
 
 const BookingForm = () => {
 	const [bookingFormValues, setBookingFormValues] = useState(initialStates);
+	const [formDownloadable, setFormDownloadable] = useState(false);
 	const ref = useRef<any>();
 
 	return (
@@ -27,7 +27,7 @@ const BookingForm = () => {
 					e.preventDefault();
 					console.table(bookingFormValues);
 					alert("نوبت برای شما ثبت گردید");
-					setBookingFormValues({ ...bookingFormValues, formDownloadable: true });
+					setFormDownloadable(true);
 				}}>
 				<BookingFirstName bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="نام" />
 
@@ -37,16 +37,14 @@ const BookingForm = () => {
 
 				<BookingInsurance bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} />
 
-				{/* <BookingDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" /> */}
-
 				<PersianDatePicker bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="انتخاب تاریخ" />
 
 				<BookingButton
 					btnText="ثبت نوبت"
-					isDisable={bookingFormValues.firstName.length > 0 ? (bookingFormValues.lastName.length > 0 ? (bookingFormValues.dateBooking.length > 0 ? false : true) : true) : true}
+					isDisable={bookingFormValues.firstName.length === 0 || bookingFormValues.lastName.length === 0 || bookingFormValues.date.length === 0}
 				/>
 
-				<GeneratePDF btnText="دانلود فرم" isDisable={!bookingFormValues.formDownloadable} formData={ref} />
+				<GeneratePDF formData={ref} btnText="دانلود فرم" isDisable={!formDownloadable} />
 			</form>
 		</>
 	);
