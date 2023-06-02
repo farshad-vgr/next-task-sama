@@ -2,18 +2,18 @@ import React, { memo } from "react";
 
 interface Props {
 	btnText: string;
-	isDisable: boolean;
+	isCaptchaValid: boolean;
 }
 
-const SubmitButton = ({ btnText, isDisable }: Props): JSX.Element => {
+const SubmitButton = ({ btnText, isCaptchaValid }: Props): JSX.Element => {
 	return (
 		<>
 			<button
 				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 py-[2px] outline-none rounded-lg ${
-					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-green-500"
+					isCaptchaValid ? "cursor-pointer text-white bg-green-500" : "cursor-not-allowed text-black bg-slate-500 opacity-50"
 				}`}
 				type="submit"
-				disabled={isDisable}>
+				disabled={!isCaptchaValid}>
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 					<path
 						strokeLinecap="round"

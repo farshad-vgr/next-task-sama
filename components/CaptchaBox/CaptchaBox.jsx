@@ -1,8 +1,8 @@
 import { useRef, memo } from "react";
-import { ArcaptchaWidget } from "arcaptcha-react";
 import axios from "axios";
+import { ArcaptchaWidget } from "arcaptcha-react";
 
-const CaptchaBox = ({ setIsDisable, inputValue }) => {
+const CaptchaBox = ({ setIsCaptchaValid, inputValue }) => {
 	const ArRef = useRef();
 
 	const getToken = (token) => {
@@ -13,7 +13,7 @@ const CaptchaBox = ({ setIsDisable, inputValue }) => {
 				secret_key: "ehq31ra94lqjj2cvy76r",
 			})
 			.then((response) => {
-				response.data.success ? setIsDisable(false) : null;
+				response.data.success ? setIsCaptchaValid(true) : setIsCaptchaValid(false);
 			})
 			.catch((error) => {
 				console.log(error);

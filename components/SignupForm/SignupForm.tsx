@@ -6,7 +6,7 @@ import { SignupInput, CaptchaBox, SubmitButton } from "@/components";
 const SignupForm = () => {
 	const router = useRouter();
 	const [inputValue, setInputValue] = useState("");
-	const [isDisable, setIsDisable] = useState(true);
+	const [isCaptchaValid, setIsCaptchaValid] = useState(false);
 
 	return (
 		<>
@@ -18,9 +18,9 @@ const SignupForm = () => {
 				}}>
 				<SignupInput inputValue={inputValue} setInputValue={setInputValue} placeHolder="کدملی / شماره موبایل / شماره قبض" />
 
-				<CaptchaBox setIsDisable={setIsDisable} inputValue={inputValue} />
+				<CaptchaBox setIsCaptchaValid={setIsCaptchaValid} inputValue={inputValue} />
 
-				<SubmitButton btnText="ورود" isDisable={isDisable} />
+				<SubmitButton btnText="ورود" isCaptchaValid={isCaptchaValid} />
 			</form>
 		</>
 	);
