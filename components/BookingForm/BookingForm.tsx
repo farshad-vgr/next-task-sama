@@ -1,5 +1,6 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
+import { toast } from "react-toastify";
 
 import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, PersianDatePicker, BookingButton } from "@/components";
 
@@ -26,7 +27,16 @@ const BookingForm = () => {
 				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 					e.preventDefault();
 					console.table(bookingFormValues);
-					alert("نوبت برای شما ثبت گردید");
+					toast.success(
+						`نوبت برای ${
+							bookingFormValues.gender === "male"
+								? "آقای " + bookingFormValues.firstName + " " + bookingFormValues.lastName
+								: "خانم " + bookingFormValues.firstName + " " + bookingFormValues.lastName
+						} ثبت گردید`,
+						{
+							position: toast.POSITION.TOP_CENTER,
+						},
+					);
 					setFormDownloadable(true);
 				}}>
 				<BookingFirstName bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="نام" />

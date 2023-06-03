@@ -14,7 +14,7 @@ const SignupForm = () => {
 				className="flex flex-col justify-center gap-4 w-full"
 				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 					e.preventDefault();
-					inputValue.trim() !== "" ? router.push("/confirmation") : alert("فرم را پر کنید!");
+					router.push("/confirmation");
 				}}>
 				<SignupInput inputValue={inputValue} setInputValue={setInputValue} placeHolder="کدملی / شماره موبایل / شماره قبض" />
 

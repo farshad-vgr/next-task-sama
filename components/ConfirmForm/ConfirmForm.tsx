@@ -13,7 +13,7 @@ const ConfirmForm = () => {
 				className="flex flex-col justify-center gap-4 w-full"
 				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
 					e.preventDefault();
-					inputValue.trim() !== "" ? router.push("/booking") : alert("فرم را پر کنید!");
+					router.push("/booking");
 				}}>
 				<SignupInput inputValue={inputValue} setInputValue={setInputValue} placeHolder="کد پیامک شده را وارد کنید" />
 
