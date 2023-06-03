@@ -10,7 +10,7 @@ const SignupInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Ele
 	return (
 		<>
 			<section>
-				<div className="relative flex justify-center w-full overflow-hidden signup-input">
+				<div className="relative flex justify-center w-full overflow-hidden signup-input confirm-input">
 					<div className="flex justify-center items-center absolute right-0 w-10 h-10 leading-8 outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 							<path

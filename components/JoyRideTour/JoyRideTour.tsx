@@ -1,6 +1,7 @@
+import { useRouter } from "next/router";
 import Joyride from "react-joyride";
 
-const TOUR_STEPS = [
+const TOUR_STEPS_SIGNUP_FORM = [
 	{
 		target: ".signup-input", // Target element class name
 		title: "اطلاعات اولیه:",
@@ -16,19 +17,16 @@ const TOUR_STEPS = [
 		offset: 5,
 		event: "hover",
 	},
+];
+
+const TOUR_STEPS_CONFIRM_FORM = [
 	{
-		target: ".tour-pagination-list",
-		title: "Draggable List:",
-		content: "These itmes are draggable!",
-		offset: 5,
-		event: "hover",
-	},
-	{
-		target: ".tour-pagination-mui",
-		title: "Pagination Library:",
-		content: "We use Material UI pagination to show more data in list!",
-		offset: 5,
-		event: "hover",
+		target: ".confirm-input", // Target element class name
+		title: "تایید شخص حقیقی:",
+		content: "برای تایید اطلاعات وارده یک پیامک حاوی رمز برای شما ارسال میشود!",
+		offset: 5, // The distance from the target to the tooltip
+		event: "hover", // The event to trigger the beacon(click/hover)
+		disableBeacon: true, // This makes the tour to start automatically without click
 	},
 ];
 
@@ -131,20 +129,39 @@ const TOUR_STYLES: TourStyles = {
 };
 
 const JoyRideTour = () => {
+	const router = useRouter();
+
 	return (
 		<>
-			<Joyride
-				steps={TOUR_STEPS}
-				styles={TOUR_STYLES}
-				floaterProps={{ placement: "auto" }}
-				locale={{ next: "بعدی", back: "قبلی", last: "پایان", skip: "( رد کردن توضیحات )" }}
-				showSkipButton
-				continuous
-				showProgress
-				disableOverlayClose
-				scrollToFirstStep
-				spotlightClicks
-			/>
+			{router.pathname === "/" && (
+				<Joyride
+					steps={TOUR_STEPS_SIGNUP_FORM}
+					styles={TOUR_STYLES}
+					floaterProps={{ placement: "auto" }}
+					locale={{ next: "بعدی", back: "قبلی", last: "پایان", skip: "( رد کردن توضیحات )" }}
+					showSkipButton
+					continuous
+					showProgress
+					disableOverlayClose
+					scrollToFirstStep
+					spotlightClicks
+				/>
+			)}
+
+			{router.pathname === "/confirmation" && (
+				<Joyride
+					steps={TOUR_STEPS_CONFIRM_FORM}
+					styles={TOUR_STYLES}
+					floaterProps={{ placement: "auto" }}
+					locale={{ next: "بعدی", back: "قبلی", last: "پایان", skip: "( رد کردن توضیحات )" }}
+					showSkipButton
+					continuous
+					showProgress
+					disableOverlayClose
+					scrollToFirstStep
+					spotlightClicks
+				/>
+			)}
 		</>
 	);
 };
