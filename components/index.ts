@@ -6,6 +6,7 @@ you can easily import it using the named import in a single line from "./compone
 
 */
 
+export { default as JoyRideTour } from "./JoyRideTour/JoyRideTour";
 export { default as Container } from "./Container/Container";
 export { default as Layout } from "./Layout/Layout";
 export { default as Header } from "./Header/Header";

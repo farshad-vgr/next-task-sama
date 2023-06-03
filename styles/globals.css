@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 	background-color: gray;
 }
 
-/*---------------------------- Hiding the arrow button from the type=number inputs: */
+/*------------------ Hiding the arrow button from the type=number inputs: */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -39,4 +39,11 @@ input[type="number"] {
 	appearance: textfield;
 	-moz-appearance: textfield;
 	/* Firefox */
+}
+
+/*------ This part handles toastify and prevent x scroll in mobile sizes: */
+@media (max-width: 640px) {
+	* {
+		overflow-x: hidden !important;
+	}
 }
