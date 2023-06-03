@@ -21,7 +21,7 @@ const GeneratePdf = ({ btnText, isDisable, formData }: Props) => {
 		<>
 			<button
 				type="button"
-				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg ${
+				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg download-button ${
 					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-blue-400"
 				}`}
 				onClick={downloadForm}

@@ -30,6 +30,24 @@ const TOUR_STEPS_CONFIRM_FORM = [
 	},
 ];
 
+const TOUR_STEPS_BOOKING_FORM = [
+	{
+		target: ".booking-button", // Target element class name
+		title: "ثبت نوبت:",
+		content: "بعد از تکمیل کردن تمام قسمت های فرم دکمه ثبت نوبت برای شما فعال میشود!",
+		offset: 5, // The distance from the target to the tooltip
+		event: "hover", // The event to trigger the beacon(click/hover)
+		disableBeacon: true, // This makes the tour to start automatically without click
+	},
+	{
+		target: ".download-button",
+		title: "دانلود فرم:",
+		content: "بعد از موفقیت آمیز بودن ثبت نوبت شما میتوانید این فرم را دانلود نمایید!",
+		offset: 5,
+		event: "hover",
+	},
+];
+
 interface TourStyles {
 	tooltipContainer: {
 		marginRight: number;
@@ -151,6 +169,21 @@ const JoyRideTour = () => {
 			{router.pathname === "/confirmation" && (
 				<Joyride
 					steps={TOUR_STEPS_CONFIRM_FORM}
+					styles={TOUR_STYLES}
+					floaterProps={{ placement: "auto" }}
+					locale={{ next: "بعدی", back: "قبلی", last: "پایان", skip: "( رد کردن توضیحات )" }}
+					showSkipButton
+					continuous
+					showProgress
+					disableOverlayClose
+					scrollToFirstStep
+					spotlightClicks
+				/>
+			)}
+
+			{router.pathname === "/booking" && (
+				<Joyride
+					steps={TOUR_STEPS_BOOKING_FORM}
 					styles={TOUR_STYLES}
 					floaterProps={{ placement: "auto" }}
 					locale={{ next: "بعدی", back: "قبلی", last: "پایان", skip: "( رد کردن توضیحات )" }}

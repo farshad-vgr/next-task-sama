@@ -10,7 +10,7 @@ const BookingButton = ({ btnText, isDisable }: Props): JSX.Element => {
 		<>
 			<button
 				type="submit"
-				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg ${
+				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg booking-button ${
 					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-green-500"
 				}`}
 				disabled={isDisable}>
