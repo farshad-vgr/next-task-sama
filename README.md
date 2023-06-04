@@ -52,6 +52,10 @@
   <a href="https://shahabyazdi.github.io/react-multi-date-picker/" target="_blank" title="React Multi Date Picker">
     <img src="https://shahabyazdi.github.io/react-multi-date-picker/favicon-32x32.png?v=53aa06cf17e4239d0dba6ffd09854e02" alt="React Multi Date Picker" width="40" height="40"/>
   </a>
+
+  <a href="https://fusejs.io/" target="_blank" title="Fusejs">
+    <img src="https://fusejs.io/assets/img/logo.png" alt="Fusejs" width="40" height="40"/>
+  </a>
 </p>
 
 ### * Screenshot:
