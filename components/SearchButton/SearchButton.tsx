@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from "react";
+import { useState } from "react";
 
 const hospitals = [
 	{
@@ -8,12 +8,12 @@ const hospitals = [
 	},
 	{
 		id: 2,
-		title: "مرکز تصویر برداری جام جم",
+		title: "مرکز تصویربرداری جام جم",
 		link: "https://www.drsaina.com/medical-imaging/1808/%D9%85%D8%B1%DA%A9%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AC%D8%A7%D9%85-%D8%AC%D9%85",
 	},
 	{
 		id: 3,
-		title: "مرکز تصویر برداری تهران",
+		title: "مرکز تصویربرداری تهران",
 		link: "https://www.drsaina.com/medical-imaging/1807/%D9%85%D8%B1%DA%A9%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86",
 	},
 	{
@@ -28,7 +28,7 @@ const hospitals = [
 	},
 	{
 		id: 6,
-		title: "مرکز تصویربرداری شفا یحیائیان",
+		title: "مرکز تصویربرداری یحیائیان",
 		link: "https://www.drsaina.com/medical-imaging/1757/%D9%85%D8%B1%DA%A9%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%B4%D9%81%D8%A7-%DB%8C%D8%AD%DB%8C%D8%A7%D8%A6%DB%8C%D8%A7%D9%86",
 	},
 	{
@@ -38,12 +38,12 @@ const hospitals = [
 	},
 	{
 		id: 8,
-		title: "مرکز تصویر برداری آیت اله کاشانی",
+		title: "مرکز تصویربرداری آیت اله کاشانی",
 		link: "https://www.drsaina.com/medical-imaging/1721/%D9%85%D8%B1%DA%A9%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%87-%DA%A9%D8%A7%D8%B4%D8%A7%D9%86%DB%8C",
 	},
 	{
 		id: 9,
-		title: "مرکز تصویر بردازی نیاوران",
+		title: "مرکز تصویربرداری نیاوران",
 		link: "https://www.drsaina.com/medical-imaging/1709/%D9%85%D8%B1%DA%A9%D8%B2-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B2%DB%8C-%D9%86%DB%8C%D8%A7%D9%88%D8%B1%D8%A7%D9%86",
 	},
 	{
