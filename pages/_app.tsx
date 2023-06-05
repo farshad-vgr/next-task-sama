@@ -1,4 +1,4 @@
-import type { AppProps } from "next/app";
+import type { AppProps, NextWebVitalsMetric } from "next/app";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import localFont from "next/font/local";
@@ -34,4 +34,9 @@ export default function App({ Component, pageProps }: AppProps) {
 			</main>
 		</>
 	);
+}
+
+// This function allows you to analyze and measure the performance of pages using different metrics
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+	console.table(metric);
 }
