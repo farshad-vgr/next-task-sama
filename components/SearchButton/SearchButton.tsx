@@ -62,12 +62,12 @@ export default function SearchButton() {
 		<>
 			<div
 				onClick={() => {
-					setElementWidth((prevValue) => (prevValue === "w-10" ? "w-80" : "w-10"));
+					setElementWidth((prevValue) => (prevValue === "w-10" ? "w-52 sm:w-80" : "w-10"));
 					setSearchValue("");
 					setResults("");
 				}}
 				className={`${elementWidth} min-h-[2.5rem] p-1 rounded-[1.25rem] text-base bg-red-700 text-white hover:bg-red-600 hover:cursor-pointer transition-all duration-500`}>
-				{elementWidth === "w-80" ? (
+				{elementWidth === "w-52 sm:w-80" ? (
 					<input
 						onClick={(e) => e.stopPropagation()}
 						onChange={async (e) => {
@@ -88,8 +88,8 @@ export default function SearchButton() {
 						className="absolute top-1 right-2 ml-2 -mr-1 p-1 pb-0 pr-3 w-[85%] h-[2rem] rounded-full outline-none text-black"></input>
 				) : null}
 
-				{results.length > 0 && elementWidth === "w-80" && (
-					<ul className="w-full mt-9 px-2 text-center rounded-2xl text-base bg-white text-black hover:cursor-pointer transition-all duration-500">
+				{results.length > 0 && elementWidth === "w-52 sm:w-80" && (
+					<ul className="w-full mt-9 px-2 text-center rounded-2xl text-[0.75rem] sm:text-base bg-white text-black hover:cursor-pointer transition-all duration-500">
 						{results.map((item: any) => {
 							return (
 								<>
@@ -111,7 +111,7 @@ export default function SearchButton() {
 					viewBox="0 0 24 24"
 					strokeWidth={3}
 					stroke="currentColor"
-					className="absolute top-2 left-2 w-6 h-6">
+					className="absolute top-2 left-1 sm:left-2 w-6 h-6">
 					<path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 				</svg>
 			</div>

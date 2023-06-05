@@ -1,6 +1,5 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
-// import { toast } from "react-toastify";
 
 import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, PersianDatePicker, BookingButton } from "@/components";
 
@@ -29,7 +28,7 @@ const BookingForm = () => {
 
 					console.table(bookingFormValues);
 
-					// Dynamically load toastify
+					// Dynamically load toastify (name import)
 					const toast = await import("react-toastify").then((mod) => mod.toast);
 
 					toast.success(
