@@ -84,8 +84,8 @@ export default function SearchButton() {
 						autoFocus
 						placeholder="جستجو..."
 						value={searchValue}
-						maxLength={25}
-						className="absolute top-1 right-2 ml-2 -mr-1 p-1 pb-0 pr-3 w-[85%] h-[2rem] rounded-full outline-none text-black"></input>
+						maxLength={15}
+						className="absolute top-1 right-2 ml-2 -mr-1 p-1 pb-0 pr-3 w-[80%] sm:w-[88%] h-[2rem] rounded-full outline-none text-black"></input>
 				) : null}
 
 				{results.length > 0 && elementWidth === "w-52 sm:w-80" && (
@@ -111,7 +111,7 @@ export default function SearchButton() {
 					viewBox="0 0 24 24"
 					strokeWidth={3}
 					stroke="currentColor"
-					className="absolute top-2 left-1 sm:left-2 w-6 h-6">
+					className="absolute top-2 left-2 w-6 h-6">
 					<path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 				</svg>
 			</div>
