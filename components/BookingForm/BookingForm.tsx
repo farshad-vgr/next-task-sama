@@ -1,6 +1,6 @@
 import { memo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, PersianDatePicker, BookingButton } from "@/components";
 
@@ -24,9 +24,14 @@ const BookingForm = () => {
 			<form
 				ref={ref}
 				className="flex flex-col justify-center gap-4 w-full"
-				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+				onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {
 					e.preventDefault();
+
 					console.table(bookingFormValues);
+
+					// Dynamically load toastify
+					const toast = await import("react-toastify").then((mod) => mod.toast);
+
 					toast.success(
 						`نوبت برای ${
 							bookingFormValues.gender === "male"
