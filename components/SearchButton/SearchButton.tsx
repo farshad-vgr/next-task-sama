@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { SearchInput } from "../index";
+import { SearchInput, SearchResultList } from "../index";
 
 const hospitals = [
 	{
@@ -58,7 +58,7 @@ const hospitals = [
 export default function SearchButton() {
 	const [elementWidth, setElementWidth] = useState("w-10");
 	const [searchValue, setSearchValue] = useState("");
-	const [results, setResults] = useState<any>("");
+	const [results, setResults] = useState([{}]);
 
 	return (
 		<>
@@ -66,29 +66,14 @@ export default function SearchButton() {
 				onClick={() => {
 					setElementWidth((prevValue) => (prevValue === "w-10" ? "w-52 sm:w-80" : "w-10"));
 					setSearchValue("");
-					setResults("");
+					setResults([{}]);
 				}}
 				className={`${elementWidth} min-h-[2.5rem] p-1 rounded-[1.25rem] text-base bg-red-700 text-white hover:bg-red-600 hover:cursor-pointer transition-all duration-500`}>
 				{elementWidth === "w-52 sm:w-80" ? (
 					<SearchInput hospitals={hospitals} searchValue={searchValue} setSearchValue={setSearchValue} setResults={setResults} />
 				) : null}
 
-				{elementWidth === "w-52 sm:w-80" && results.length > 0 && (
-					<ul className="w-full mt-9 px-2 text-center rounded-2xl text-[0.75rem] sm:text-base bg-white text-black hover:cursor-pointer transition-all duration-500">
-						{results.map((item: any) => {
-							return (
-								<>
-									<li key={item.item.id} className="pt-2">
-										<a href={item.item.link} target="_blank">
-											{item.item.title}
-										</a>
-									</li>
-									<hr></hr>
-								</>
-							);
-						})}
-					</ul>
-				)}
+				{elementWidth === "w-52 sm:w-80" && results.length > 0 && Object.keys(results[0]).length > 0 && <SearchResultList results={results} />}
 
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

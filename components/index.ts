@@ -14,6 +14,7 @@ export { default as Navbar } from "./Navbar/Navbar";
 export { default as NavbarItem } from "./NavbarItem/NavbarItem";
 export { default as SearchButton } from "./SearchButton/SearchButton";
 export { default as SearchInput } from "./SearchInput/SearchInput";
+export { default as SearchResultList } from "./SearchResultList/SearchResultList";
 export { default as MenuButton } from "./MenuButton/MenuButton";
 export { default as CloseButton } from "./CloseButton/CloseButton";
 export { default as Asidebar } from "./Asidebar/Asidebar";
