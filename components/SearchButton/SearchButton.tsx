@@ -1,6 +1,11 @@
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
-import { SearchInput, SearchResultList } from "../index";
+//Dynamic SearchInput and SearchResultList component import
+const SearchInput = dynamic(() => import("../SearchInput/SearchInput"));
+const SearchResultList = dynamic(() => import("../SearchResultList/SearchResultList"));
+
+// import { SearchInput, SearchResultList } from "../index";
 
 const hospitals = [
 	{
