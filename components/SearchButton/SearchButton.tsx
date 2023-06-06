@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { SearchInput } from "../index";
+
 const hospitals = [
 	{
 		id: 1,
@@ -68,27 +70,10 @@ export default function SearchButton() {
 				}}
 				className={`${elementWidth} min-h-[2.5rem] p-1 rounded-[1.25rem] text-base bg-red-700 text-white hover:bg-red-600 hover:cursor-pointer transition-all duration-500`}>
 				{elementWidth === "w-52 sm:w-80" ? (
-					<input
-						onClick={(e) => e.stopPropagation()}
-						onChange={async (e) => {
-							const { value } = e.currentTarget;
-
-							// Dynamically load fuse.js
-							const Fuse = (await import("fuse.js")).default;
-							const fuse = new Fuse(hospitals, { threshold: 0.3, keys: ["title"] });
-
-							setSearchValue(value);
-							setResults(fuse.search(value));
-						}}
-						type="text"
-						autoFocus
-						placeholder="جستجو..."
-						value={searchValue}
-						maxLength={15}
-						className="absolute top-1 right-2 ml-2 -mr-1 p-1 pb-0 pr-3 w-[80%] sm:w-[88%] h-[2rem] rounded-full outline-none text-black"></input>
+					<SearchInput hospitals={hospitals} searchValue={searchValue} setSearchValue={setSearchValue} setResults={setResults} />
 				) : null}
 
-				{results.length > 0 && elementWidth === "w-52 sm:w-80" && (
+				{elementWidth === "w-52 sm:w-80" && results.length > 0 && (
 					<ul className="w-full mt-9 px-2 text-center rounded-2xl text-[0.75rem] sm:text-base bg-white text-black hover:cursor-pointer transition-all duration-500">
 						{results.map((item: any) => {
 							return (
