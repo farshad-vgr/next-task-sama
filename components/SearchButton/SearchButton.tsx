@@ -5,8 +5,6 @@ import dynamic from "next/dynamic";
 const SearchInput = dynamic(() => import("../SearchInput/SearchInput"));
 const SearchResultList = dynamic(() => import("../SearchResultList/SearchResultList"));
 
-// import { SearchInput, SearchResultList } from "../index";
-
 const hospitals = [
 	{
 		id: 1,
