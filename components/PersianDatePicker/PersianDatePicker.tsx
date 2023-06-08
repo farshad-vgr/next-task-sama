@@ -36,7 +36,7 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 					</svg>
 				</div>
 
-				<label className="pr-12 pt-2 text-gray-400">{placeHolder}</label>
+				<label className={`pr-[3.5rem] pt-2 text-gray-400 ${dateColor === "black" && "opacity-0 transition-all duration-300"}`}>{placeHolder}:</label>
 
 				<DatePicker
 					className="red"
