@@ -3,10 +3,12 @@ import DatePicker, { DateObject } from "react-multi-date-picker";
 import persianCalendar from "react-date-object/calendars/persian";
 import persianLanguage from "react-date-object/locales/persian_fa";
 
+import { convertFarsiDigitsToEnglish } from "@/utils/digitConverter";
+
 import "react-multi-date-picker/styles/colors/red.css";
 
 interface Props {
-	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; date: string; };
+	bookingFormValues: { firstName: string; lastName: string; gender: string; insurance: boolean; date: string };
 	setBookingFormValues: any;
 	placeHolder: string;
 }
@@ -18,7 +20,7 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 	function handleChange(value: DateObject) {
 		setValue(value);
 		setDateColor("black");
-		setBookingFormValues({ ...bookingFormValues, date: value.toDate().toLocaleDateString("fa-IR") });
+		setBookingFormValues({ ...bookingFormValues, date: convertFarsiDigitsToEnglish(value.toDate().toLocaleDateString("fa-IR")) });
 	}
 
 	return (
@@ -47,8 +49,8 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 					placeholder={placeHolder}
 					calendarPosition="top"
 					style={{
-            width: "8rem",
-            height: "1.75rem",
+						width: "8rem",
+						height: "1.75rem",
 						textAlign: "center",
 						outline: "none",
 						background: "none",

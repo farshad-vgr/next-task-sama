@@ -36,7 +36,7 @@ const BookingForm = () => {
 							bookingFormValues.gender === "male"
 								? "آقای " + bookingFormValues.firstName + " " + bookingFormValues.lastName
 								: "خانم " + bookingFormValues.firstName + " " + bookingFormValues.lastName
-						} ثبت گردید`,
+						} ثبت شد!`,
 						{
 							position: toast.POSITION.TOP_CENTER,
 						},
