@@ -25,7 +25,7 @@ export default function Layout({ children }: Props) {
 		<>
 			<section className="relative">
 				<Header />
-				{children}
+					{children}
 				<Footer />
 
 				{/* Show or hide the jumper button depends on the scroll value */}

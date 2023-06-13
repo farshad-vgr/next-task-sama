@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { BookingForm, FormHeader } from "@/components";
+import { BookingForm, FormHeader } from "../components/index";
 
 export default function Booking() {
 	return (

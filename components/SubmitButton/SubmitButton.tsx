@@ -9,7 +9,7 @@ const SubmitButton = ({ btnText, isCaptchaValid }: Props): JSX.Element => {
 	return (
 		<>
 			<button
-				className={`submit-btn flex justify-center items-center self-center gap-1 max-w-fit px-3 py-[2px] outline-none rounded-lg ${
+				className={`flex justify-center items-center self-center gap-1 max-w-fit px-3 py-[2px] outline-none rounded-lg ${
 					isCaptchaValid ? "cursor-pointer text-white bg-green-500" : "cursor-not-allowed text-black bg-slate-500 opacity-50"
 				}`}
 				type="submit"

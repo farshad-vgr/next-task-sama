@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { ConfirmForm, FormHeader } from "@/components";
+import { ConfirmForm, FormHeader } from "../components/index";
 
 export default function Confirmation() {
 	return (

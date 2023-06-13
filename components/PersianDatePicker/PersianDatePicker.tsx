@@ -3,7 +3,7 @@ import DatePicker, { DateObject } from "react-multi-date-picker";
 import persianCalendar from "react-date-object/calendars/persian";
 import persianLanguage from "react-date-object/locales/persian_fa";
 
-import { convertFarsiDigitsToEnglish } from "@/utils/digitConverter";
+import { convertFarsiDigitsToEnglish } from "../../utils/digitConverter";
 
 import "react-multi-date-picker/styles/colors/red.css";
 

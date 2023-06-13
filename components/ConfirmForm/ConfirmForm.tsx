@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { useRouter } from "next/router";
 
-import { SignupInput, ConfirmButton } from "@/components";
+import { SignupInput, ConfirmButton } from "../index";
 
 const ConfirmForm = () => {
 	const router = useRouter();

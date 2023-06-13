@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { useRouter } from "next/router";
 
-import { SignupInput, CaptchaBox, SubmitButton } from "@/components";
+import { SignupInput, CaptchaBox, SubmitButton } from "../index";
 
 const SignupForm = () => {
 	const router = useRouter();
