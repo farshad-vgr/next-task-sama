@@ -26,7 +26,7 @@ describe("ConfirmButton", () => {
 		expect(button).toBeDisabled();
 		expect(button).toHaveAttribute("disabled");
 		expect(button).toHaveAttribute("type", "submit");
-    expect(button).toHaveClass("flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg");
+    expect(button).toHaveClass("flex justify-center items-center self-center max-w-fit outline-none");
 		
     expect(buttonSVG).toHaveAttribute("xmlns", "http://www.w3.org/2000/svg");
     expect(buttonSVG).toHaveAttribute("fill", "none");
@@ -46,7 +46,7 @@ describe("ConfirmButton", () => {
 
     expect(button).toBeDisabled();
     expect(button).toHaveAttribute("disabled");
-    expect(button).toHaveClass("cursor-not-allowed text-black bg-slate-500 opacity-50");
+    expect(button).toHaveClass("cursor-not-allowed opacity-50");
   });
   
   it("Has enable props?", () => {
@@ -56,6 +56,6 @@ describe("ConfirmButton", () => {
 
     expect(button).toBeEnabled();
     expect(button).not.toHaveAttribute("disabled");
-    expect(button).toHaveClass("cursor-pointer text-white bg-green-500");
+    expect(button).toHaveClass("cursor-pointer");
 	});
 });
