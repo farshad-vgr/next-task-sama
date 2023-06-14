@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 
-import { ConfirmButton, CloseButton } from "../components/index.ts";
+import { ConfirmButton, CloseButton, MenuButton } from "../components/index.ts";
 
 describe("Snapshot Testing", () => {
 	it("Renderes ConfirmButton unchanged?", () => {
@@ -10,6 +10,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes CloseButton unchanged?", () => {
 		const { container } = render(<CloseButton />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes MenuButton unchanged?", () => {
+		const { container } = render(<MenuButton />);
 		expect(container).toMatchSnapshot();
 	});
 });
