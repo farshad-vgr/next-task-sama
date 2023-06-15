@@ -11,6 +11,7 @@ const SearchInput = ({ hospitals, searchValue, setSearchValue, setResults }: Pro
 	return (
 		<>
 			<input
+				data-testid="search-input"
 				onClick={(e) => e.stopPropagation()}
 				onChange={async (e) => {
 					const { value } = e.currentTarget;
@@ -23,7 +24,7 @@ const SearchInput = ({ hospitals, searchValue, setSearchValue, setResults }: Pro
 					setResults(fuse.search(value));
 				}}
 				type="text"
-				autoFocus
+				autoFocus={true}
 				placeholder="جستجو..."
 				value={searchValue}
 				maxLength={15}

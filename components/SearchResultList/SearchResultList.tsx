@@ -7,7 +7,7 @@ interface Props {
 const SearchResultList = ({ results }: Props) => {
 	return (
 		<>
-			<ul className="w-full mt-9 px-2 text-center rounded-2xl text-[0.75rem] sm:text-base bg-white text-black hover:cursor-pointer transition-all duration-500">
+			<ul data-testid="search-result-list" className="w-full mt-9 px-2 text-center rounded-2xl text-[0.75rem] sm:text-base bg-white text-black hover:cursor-pointer transition-all duration-500">
 				{results.map((result: any) => {
 					return (
 						<Fragment key={result.item.id}>

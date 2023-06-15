@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 
-import { ConfirmButton, CloseButton, MenuButton } from "../components/index.ts";
+import { ConfirmButton, CloseButton, MenuButton, Asidebar, SearchButton } from "../components/index.ts";
 
 describe("Snapshot Testing", () => {
 	it("Renderes ConfirmButton unchanged?", () => {
@@ -15,6 +15,16 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes MenuButton unchanged?", () => {
 		const { container } = render(<MenuButton />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes Asidebar unchanged?", () => {
+		const { container } = render(<Asidebar isAside={false} setIsAside={jest.fn()} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes SearchButton unchanged?", () => {
+		const { container } = render(<SearchButton />);
 		expect(container).toMatchSnapshot();
 	});
 });

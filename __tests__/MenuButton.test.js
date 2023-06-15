@@ -4,30 +4,24 @@ import "@testing-library/jest-dom";
 import MenuButton from "../components/MenuButton/MenuButton";
 
 describe("MenuButton", () => {
-	it("Rendered?", () => {
+	let button, buttonSVG;
+
+	beforeEach(() => {
 		render(<MenuButton />);
 
-		const button = screen.getByTestId("menu-button");
-		const buttonSVG = screen.getByTestId("menu-button-svg");
+		button = screen.getByTestId("menu-button");
+		buttonSVG = screen.getByTestId("menu-button-svg");
+	});
 
+	it("Should render all elements", () => {
 		expect(button).toBeInTheDocument();
 		expect(buttonSVG).toBeInTheDocument();
 	});
 
-	it("Has initial props?", () => {
-		const setIsAside = jest.fn();
-
-		render(<MenuButton />);
-
-		const button = screen.getByTestId("menu-button");
-		const buttonSVG = screen.getByTestId("menu-button-svg");
-
+	it("Should validate elements props", () => {
 		expect(button).toBeEnabled();
 		expect(button).toHaveAttribute("type", "button");
 		expect(button).toHaveClass("flex justify-center items-center absolute hover:cursor-pointer");
-
-		fireEvent.click(button);
-		expect(setIsAside).toBeCalledTimes(0);
 
 		expect(buttonSVG).toHaveAttribute("xmlns", "http://www.w3.org/2000/svg");
 		expect(buttonSVG).toHaveAttribute("fill", "none");
@@ -35,5 +29,12 @@ describe("MenuButton", () => {
 		expect(buttonSVG).toHaveAttribute("stroke-width", "3");
 		expect(buttonSVG).toHaveAttribute("stroke", "currentColor");
 		expect(buttonSVG).toHaveClass("w-6 h-6");
+	});
+
+	it("Should handle events", () => {
+		fireEvent.click(button);
+
+		expect(button).not.toBeInTheDocument();
+		expect(buttonSVG).not.toBeInTheDocument();
 	});
 });

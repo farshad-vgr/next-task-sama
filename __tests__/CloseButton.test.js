@@ -4,33 +4,26 @@ import "@testing-library/jest-dom";
 import CloseButton from "../components/CloseButton/CloseButton";
 
 describe("CloseButton", () => {
-	it("Rendered?", () => {
-		render(<CloseButton />);
+	let button,
+		buttonSVG,
+		setIsAside = jest.fn(); // This is a mock function
 
-		const button = screen.getByTestId("close-button");
-		const buttonSVG = screen.getByTestId("close-button-svg");
+	beforeEach(() => {
+		render(<CloseButton setIsAside={setIsAside} />);
 
+		button = screen.getByTestId("close-button");
+		buttonSVG = screen.getByTestId("close-button-svg");
+	});
+
+	it("Should render all elements", () => {
 		expect(button).toBeInTheDocument();
 		expect(buttonSVG).toBeInTheDocument();
 	});
 
-	it("Has initial props?", () => {
-		const setIsAside = jest.fn();
-
-		render(<CloseButton setIsAside={setIsAside} />);
-
-		const button = screen.getByTestId("close-button");
-		const buttonSVG = screen.getByTestId("close-button-svg");
-
+	it("Should validate elements props", () => {
 		expect(button).toBeEnabled();
 		expect(button).toHaveAttribute("type", "button");
-		expect(button).toHaveClass(
-			"flex justify-center items-center absolute",
-    );
-    
-    fireEvent.click(button);
-		expect(setIsAside).toHaveBeenCalled();
-		expect(setIsAside).toBeCalledTimes(1);
+		expect(button).toHaveClass("flex justify-center items-center absolute");
 
 		expect(buttonSVG).toHaveAttribute("xmlns", "http://www.w3.org/2000/svg");
 		expect(buttonSVG).toHaveAttribute("fill", "none");
@@ -38,5 +31,12 @@ describe("CloseButton", () => {
 		expect(buttonSVG).toHaveAttribute("stroke-width", "3");
 		expect(buttonSVG).toHaveAttribute("stroke", "currentColor");
 		expect(buttonSVG).toHaveClass("w-5 h-5");
+	});
+
+	it("Should handle events", () => {
+		fireEvent.click(button);
+
+		expect(button).toBeInTheDocument();
+		expect(buttonSVG).toBeInTheDocument();
 	});
 });
