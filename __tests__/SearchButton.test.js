@@ -1,5 +1,5 @@
 import { act } from "react-dom/test-utils";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { SearchButton, SearchInput } from "../components/index.ts";
@@ -12,7 +12,7 @@ describe("SearchButton", () => {
 			<>
 				<SearchButton />
 				<SearchInput />
-			</>
+			</>,
 		);
 
 		button = screen.getByTestId("search-button");
@@ -21,8 +21,8 @@ describe("SearchButton", () => {
 	});
 
 	it("Should render all elements", () => {
-    expect(button).toBeInTheDocument();
-    
+		expect(button).toBeInTheDocument();
+
 		expect(buttonSVG).toBeInTheDocument();
 	});
 
@@ -44,14 +44,19 @@ describe("SearchButton", () => {
 			fireEvent.click(button);
 		});
 
-    expect(button).toHaveClass("w-52 sm:w-80 min-h-[2.5rem] hover:cursor-pointer");
-    
-		expect(searchInput).toBeInTheDocument();
-		expect(searchInput).toHaveTextContent("");
-		expect(searchInput).toHaveAttribute("type", "text");
-		expect(searchInput).toHaveAttribute("maxlength", "15");
-		expect(searchInput).toHaveAttribute("value", "");
-		expect(searchInput).toHaveAttribute("placeholder", "جستجو...");
-		expect(searchInput).toHaveClass("absolute w-[80%] sm:w-[88%] h-[2rem] outline-none");
+		waitFor(() => expect(button).toHaveClass("w-52 sm:w-80 min-h-[2.5rem] hover:cursor-pointer"));
+
+		waitFor(() => {
+			expect(searchInput).toBeInTheDocument();
+			expect(searchInput).toHaveTextContent("");
+			expect(searchInput).toHaveAttribute("onclick");
+			expect(searchInput).toHaveAttribute("onchange");
+			expect(searchInput).toHaveAttribute("type", "text");
+			expect(searchInput).toHaveAttribute("autofocus");
+			expect(searchInput).toHaveAttribute("placeholder", "جستجو...");
+			expect(searchInput).toHaveAttribute("value", "");
+			expect(searchInput).toHaveAttribute("maxlength", "15");
+			expect(searchInput).toHaveClass("absolute w-[80%] sm:w-[88%] h-[2rem] outline-none");
+		});
 	});
 });
