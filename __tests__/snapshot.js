@@ -1,8 +1,13 @@
 import { render } from "@testing-library/react";
 
-import { ConfirmButton, BookingButton, CloseButton, MenuButton, Asidebar, SearchButton, JumperButton } from "../components/index.ts";
+import { SubmitButton, ConfirmButton, BookingButton, CloseButton, MenuButton, Asidebar, SearchButton, JumperButton } from "../components/index.ts";
 
 describe("Snapshot Testing", () => {
+	it("Renderes SubmitButton unchanged?", () => {
+		const { container } = render(<SubmitButton btnText="ورود" isCaptchaValid={false} />);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("Renderes ConfirmButton unchanged?", () => {
 		const { container } = render(<ConfirmButton btnText="تایید" isDisable={true} />);
 		expect(container).toMatchSnapshot();

@@ -9,12 +9,20 @@ const SubmitButton = ({ btnText, isCaptchaValid }: Props): JSX.Element => {
 	return (
 		<>
 			<button
+				data-testid="submit-button"
 				className={`flex justify-center items-center self-center gap-1 max-w-fit px-3 py-[2px] outline-none rounded-lg ${
 					isCaptchaValid ? "cursor-pointer text-white bg-green-500" : "cursor-not-allowed text-black bg-slate-500 opacity-50"
 				}`}
 				type="submit"
 				disabled={!isCaptchaValid}>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+				<svg
+					data-testid="submit-button-svg"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					strokeWidth={1.5}
+					stroke="currentColor"
+					className="w-6 h-6">
 					<path
 						strokeLinecap="round"
 						strokeLinejoin="round"
@@ -22,7 +30,9 @@ const SubmitButton = ({ btnText, isCaptchaValid }: Props): JSX.Element => {
 					/>
 				</svg>
 
-				<span className="mt-1">{btnText}</span>
+				<span data-testid="submit-button-span" className="mt-1">
+					{btnText}
+				</span>
 			</button>
 		</>
 	);
