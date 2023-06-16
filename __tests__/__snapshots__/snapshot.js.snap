@@ -227,6 +227,33 @@ exports[`Snapshot Testing Renderes ConfirmButton unchanged? 1`] = `
 </div>
 `;
 
+exports[`Snapshot Testing Renderes JumperButton unchanged? 1`] = `
+<div>
+  <button
+    class="fixed bottom-3 right-3 p-1 text-undefined-500 bg-black bg-opacity-20 border-2 border-dashed rounded-full border-undefined-500 hover:bg-opacity-30 transition-all duration-300"
+    data-testid="jumper-button"
+    title="برو به بالای صفحه!"
+    type="button"
+  >
+    <svg
+      class="w-6 h-6"
+      data-testid="jumper-button-svg"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
 exports[`Snapshot Testing Renderes MenuButton unchanged? 1`] = `
 <div>
   <button
