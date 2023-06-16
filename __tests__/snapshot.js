@@ -1,10 +1,15 @@
 import { render } from "@testing-library/react";
 
-import { ConfirmButton, CloseButton, MenuButton, Asidebar, SearchButton, JumperButton } from "../components/index.ts";
+import { ConfirmButton, BookingButton, CloseButton, MenuButton, Asidebar, SearchButton, JumperButton } from "../components/index.ts";
 
 describe("Snapshot Testing", () => {
 	it("Renderes ConfirmButton unchanged?", () => {
 		const { container } = render(<ConfirmButton btnText="تایید" isDisable={true} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes BookingButton unchanged?", () => {
+		const { container } = render(<BookingButton btnText="ثبت نوبت" isDisable={true} />);
 		expect(container).toMatchSnapshot();
 	});
 

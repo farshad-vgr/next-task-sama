@@ -9,12 +9,20 @@ const BookingButton = ({ btnText, isDisable }: Props): JSX.Element => {
 	return (
 		<>
 			<button
+				data-testid="booking-button"
 				type="submit"
 				className={`flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg booking-button ${
 					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-green-500"
 				}`}
 				disabled={isDisable}>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+				<svg
+					data-testid="booking-button-svg"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					strokeWidth={1.5}
+					stroke="currentColor"
+					className="w-6 h-6">
 					<path
 						strokeLinecap="round"
 						strokeLinejoin="round"
@@ -22,7 +30,9 @@ const BookingButton = ({ btnText, isDisable }: Props): JSX.Element => {
 					/>
 				</svg>
 
-				<span className="mt-2">{btnText}</span>
+				<span data-testid="booking-button-span" className="mt-2">
+					{btnText}
+				</span>
 			</button>
 		</>
 	);
