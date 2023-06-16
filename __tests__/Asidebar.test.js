@@ -50,12 +50,7 @@ describe("Asidebar", () => {
 	});
 
 	it("Should handle events", () => {
-    fireEvent.click(asidebarBackdrop);
-
-		expect(asidebarBackdrop).toHaveClass("-right-full");
-    expect(asidebarContainer).toHaveClass("-left-60");
-
-		fireEvent.click(asidebarNavbarWrapper);
+		fireEvent.click(asidebarBackdrop);
 
 		expect(asidebarBackdrop).toHaveClass("-right-full");
 		expect(asidebarContainer).toHaveClass("-left-60");

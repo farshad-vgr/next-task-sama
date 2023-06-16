@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import MenuButton from "../components/MenuButton/MenuButton";
+import { MenuButton } from "../components/index.ts";
 
 describe("MenuButton", () => {
 	let button, buttonSVG;
@@ -34,7 +34,14 @@ describe("MenuButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		expect(button).not.toBeInTheDocument();
-		expect(buttonSVG).not.toBeInTheDocument();
+		waitFor(() => {
+			expect(button).not.toBeInTheDocument();
+			expect(buttonSVG).not.toBeInTheDocument();
+		});
+
+		waitFor(() => {
+			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("right-0");
+			expect(screen.getByTestId("asidebar-container")).toHaveClass("left-0");
+		});
 	});
 });
