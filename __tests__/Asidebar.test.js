@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import Asidebar from "../components/Asidebar/Asidebar";
@@ -51,6 +51,8 @@ describe("Asidebar", () => {
 
 	it("Should handle events", () => {
 		fireEvent.click(asidebarBackdrop);
+
+		waitFor(() => expect(setIsAside).toBeCalled());
 
 		expect(asidebarBackdrop).toHaveClass("-right-full");
 		expect(asidebarContainer).toHaveClass("-left-60");

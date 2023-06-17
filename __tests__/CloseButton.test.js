@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import CloseButton from "../components/CloseButton/CloseButton";
@@ -36,7 +36,11 @@ describe("CloseButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		expect(button).toBeInTheDocument();
-		expect(buttonSVG).toBeInTheDocument();
+		waitFor(() => {
+			expect(button).toBeInTheDocument();
+			expect(buttonSVG).toBeInTheDocument();
+			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("-right-full");
+			expect(screen.getByTestId("asidebar-container")).toHaveClass("-left-60");
+		});
 	});
 });

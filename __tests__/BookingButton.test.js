@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { BookingButton } from "../components/index.ts";
@@ -52,5 +52,15 @@ describe("BookingButton", () => {
 		expect(button).toBeEnabled();
 		expect(button).not.toHaveAttribute("disabled");
 		expect(button).toHaveClass("cursor-pointer");
+	});
+
+	it("Should handle events", () => {
+		fireEvent.click(button);
+
+		waitFor(() => {
+			expect(screen.getByTestId("generate-pdf-button")).toBeEnabled();
+			expect(button).not.toHaveAttribute("disabled");
+			expect(button).toHaveClass("cursor-pointer");
+		});
 	});
 });

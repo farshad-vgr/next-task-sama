@@ -34,14 +34,9 @@ describe("MenuButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		waitFor(() => {
-			expect(button).not.toBeInTheDocument();
-			expect(buttonSVG).not.toBeInTheDocument();
-		});
-
-		waitFor(() => {
-			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("right-0");
-			expect(screen.getByTestId("asidebar-container")).toHaveClass("left-0");
-		});
+		expect(button).not.toBeInTheDocument();
+		expect(buttonSVG).not.toBeInTheDocument();
+		expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("right-0");
+		expect(screen.getByTestId("asidebar-container")).toHaveClass("left-0");
 	});
 });

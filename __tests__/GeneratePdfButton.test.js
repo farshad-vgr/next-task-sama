@@ -2,7 +2,6 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { GeneratePdfButton } from "../components/index.ts";
-import jsPDF from "jspdf";
 
 describe("GeneratePdfButton", () => {
 	let button,
@@ -61,7 +60,7 @@ describe("GeneratePdfButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		waitFor(async () => {
+		waitFor(() => {
 			expect(downloadForm).toBeCalled();
 			expect(downloadForm).toBeCalledTimes(1);
 		});

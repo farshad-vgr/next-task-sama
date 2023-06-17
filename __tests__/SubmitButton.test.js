@@ -1,10 +1,13 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { SubmitButton } from "../components/index.ts";
 
 describe("SubmitButton", () => {
-	let button, buttonSVG, buttonSpan;
+	let button,
+		buttonSVG,
+		buttonSpan,
+		mockUrl = global.window.location.pathname + "confirmation"; // This is a mock url
 
 	beforeAll(() => {
 		// Render the component with default props
@@ -52,5 +55,13 @@ describe("SubmitButton", () => {
 		expect(button).toBeEnabled();
 		expect(button).not.toHaveAttribute("disabled");
 		expect(button).toHaveClass("cursor-pointer");
+	});
+
+	it("Should handle events", () => {
+		fireEvent.click(button);
+
+		mockUrl = mockUrl.replace(/confirmation/i, "booking");
+
+		expect(mockUrl).toBe("/booking");
 	});
 });
