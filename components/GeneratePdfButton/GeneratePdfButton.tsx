@@ -8,7 +8,7 @@ interface Props {
 	formData: any;
 }
 
-const GeneratePdf = ({ btnText, isDisable, formData }: Props) => {
+const GeneratePdfButton = ({ btnText, isDisable, formData }: Props) => {
 	const downloadForm = async () => {
 		const screenImage = await toPng(formData.current, { quality: 1 });
 		const pdfFile = new jsPDF();
@@ -20,13 +20,21 @@ const GeneratePdf = ({ btnText, isDisable, formData }: Props) => {
 	return (
 		<>
 			<button
+				data-testid="generate-pdf-button"
 				type="button"
 				className={`flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg download-button ${
 					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-blue-400"
 				}`}
 				onClick={downloadForm}
 				disabled={isDisable}>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+				<svg
+					data-testid="generate-pdf-button-svg"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					strokeWidth={1.5}
+					stroke="currentColor"
+					className="w-6 h-6">
 					<path
 						strokeLinecap="round"
 						strokeLinejoin="round"
@@ -34,10 +42,12 @@ const GeneratePdf = ({ btnText, isDisable, formData }: Props) => {
 					/>
 				</svg>
 
-				<span className="mt-2">{btnText}</span>
+				<span data-testid="generate-pdf-button-span" className="mt-2">
+					{btnText}
+				</span>
 			</button>
 		</>
 	);
 };
 
-export default memo(GeneratePdf);
+export default memo(GeneratePdfButton);

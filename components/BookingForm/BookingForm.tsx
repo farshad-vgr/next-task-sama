@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 import { BookingFirstName, BookingLastName, BookingGender, BookingInsurance, PersianDatePicker, BookingButton } from "../index";
 
-const GeneratePDF = dynamic(() => import("../GeneratePDF/GeneratePDF"), { ssr: false });
+const GeneratePdfButton = dynamic(() => import("../GeneratePdfButton/GeneratePdfButton"), { ssr: false });
 
 const initialStates = {
 	firstName: "",
@@ -58,7 +58,7 @@ const BookingForm = () => {
 					isDisable={bookingFormValues.firstName.length === 0 || bookingFormValues.lastName.length === 0 || bookingFormValues.date.length === 0}
 				/>
 
-				<GeneratePDF formData={ref} btnText="دانلود فرم" isDisable={!formDownloadable} />
+				<GeneratePdfButton formData={ref} btnText="دانلود فرم" isDisable={!formDownloadable} />
 			</form>
 		</>
 	);

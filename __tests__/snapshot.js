@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 
-import { SubmitButton, ConfirmButton, BookingButton, CloseButton, MenuButton, Asidebar, SearchButton, JumperButton } from "../components/index.ts";
+import { SubmitButton, ConfirmButton, BookingButton, CloseButton, MenuButton, Asidebar, SearchButton, JumperButton, GeneratePdfButton } from "../components/index.ts";
 
 describe("Snapshot Testing", () => {
 	it("Renderes SubmitButton unchanged?", () => {
@@ -15,6 +15,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes BookingButton unchanged?", () => {
 		const { container } = render(<BookingButton btnText="ثبت نوبت" isDisable={true} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes GeneratePdfButton unchanged?", () => {
+		const { container } = render(<GeneratePdfButton btnText="دانلود فرم" isDisable={true} />);
 		expect(container).toMatchSnapshot();
 	});
 
