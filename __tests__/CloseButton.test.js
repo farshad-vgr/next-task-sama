@@ -1,7 +1,8 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { act } from "react-dom/test-utils";
 
-import CloseButton from "../components/CloseButton/CloseButton";
+import { CloseButton, Asidebar } from "../components/index.ts";
 
 describe("CloseButton", () => {
 	let button,
@@ -33,12 +34,20 @@ describe("CloseButton", () => {
 		expect(buttonSVG).toHaveClass("w-5 h-5");
 	});
 
-	it("Should handle events", () => {
-		fireEvent.click(button);
+	it("Should handle events", async () => {
+		// Render the target component
+		render(<Asidebar setIsAside={setIsAside} />);
 
-		waitFor(() => {
+		act(() => fireEvent.click(button));
+
+		await waitFor(() => {
+			expect(setIsAside).toBeCalled();
+			expect(setIsAside).toBeCalledTimes(1);
+			expect(setIsAside).toBeCalledWith(false);
+
 			expect(button).toBeInTheDocument();
 			expect(buttonSVG).toBeInTheDocument();
+
 			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("-right-full");
 			expect(screen.getByTestId("asidebar-container")).toHaveClass("-left-60");
 		});

@@ -1,5 +1,6 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { act } from "react-dom/test-utils";
 
 import Asidebar from "../components/Asidebar/Asidebar";
 
@@ -10,7 +11,7 @@ describe("Asidebar", () => {
 		asidebarNavbarWrapper,
 		setIsAside = jest.fn(); // This is a mock function
 
-	beforeAll(() => {
+	beforeEach(() => {
 		// Render the component with default props
 		render(<Asidebar isAside={false} setIsAside={setIsAside} />);
 
@@ -39,22 +40,48 @@ describe("Asidebar", () => {
 	});
 
 	it("Should validate elements props when the Asidebar is visible", () => {
-		// Render the component with new props then get elements
+		cleanup();
+
+		// Rerender the target component with new props after a cleanup function
 		render(<Asidebar isAside={true} setIsAside={setIsAside} />);
 
-		const asidebarBackdrop = screen.getByTestId("asidebar-backdrop");
-		const asidebarContainer = screen.getByTestId("asidebar-container");
-
-		expect(asidebarBackdrop).toHaveClass("right-0");
-		expect(asidebarContainer).toHaveClass("left-0");
+		expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("right-0");
+		expect(screen.getByTestId("asidebar-container")).toHaveClass("left-0");
 	});
 
-	it("Should handle events", () => {
-		fireEvent.click(asidebarBackdrop);
+	it("Should handle events on sidebar-backdrop click", async () => {
+		cleanup();
 
-		waitFor(() => expect(setIsAside).toBeCalled());
+		// Rerender the target component after a cleanup function
+		render(<Asidebar setIsAside={setIsAside} />);
 
-		expect(asidebarBackdrop).toHaveClass("-right-full");
-		expect(asidebarContainer).toHaveClass("-left-60");
+		act(() => fireEvent.click(screen.getByTestId("asidebar-backdrop")));
+
+		await waitFor(() => {
+			expect(setIsAside).toBeCalled();
+			expect(setIsAside).toBeCalledTimes(1);
+			expect(setIsAside).toBeCalledWith(false);
+
+			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("-right-full");
+			expect(screen.getByTestId("asidebar-container")).toHaveClass("-left-60");
+		});
+	});
+
+	it("Should handle events on asidebar-navbar-wrapper click", async () => {
+		cleanup();
+
+		// Rerender the target component after a cleanup function
+		render(<Asidebar setIsAside={setIsAside} />);
+
+		act(() => fireEvent.click(screen.getByTestId("asidebar-navbar-wrapper")));
+
+		await waitFor(() => {
+			expect(setIsAside).toBeCalled();
+			expect(setIsAside).toBeCalledTimes(2);
+			expect(setIsAside).toBeCalledWith(false);
+
+			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("-right-full");
+			expect(screen.getByTestId("asidebar-container")).toHaveClass("-left-60");
+		});
 	});
 });

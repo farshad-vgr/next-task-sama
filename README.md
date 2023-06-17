@@ -1,9 +1,11 @@
 # authentication-booking-form
+
 <h3>Hello guys</h3>
 <p>This is an authentication and booking form with some features</p>
 <p>I appreciate it if you contribute to this project and add other options and more themes or colors to this form. Thanx!</p>
 
-### * Languages and Tools:
+### \* Languages and Tools:
+
 <p align="left">
   <a href="https://www.typescriptlang.org/" target="_blank" title="TypeScript">
     <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" alt="TypeScript" width="40" height="40"/>
@@ -22,7 +24,7 @@
   </a>
   
   <a href="https://redux.js.org" target="_blank" title="Redux">
-	<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux" width="40" height="40"/>
+	  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux" width="40" height="40"/>
   </a>
 
   <a href="https://docs.react-joyride.com/" target="_blank" title="JoyRide">
@@ -34,7 +36,7 @@
   </a>
   
   <a href="https://tailwindcss.com/" target="_blank" title="Tailwind">
-	<img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind" width="40" height="40"/>
+	  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind" width="40" height="40"/>
   </a> 
  
   <a href="https://www.w3schools.com/html/" target="_blank" title="HTML5">
@@ -43,6 +45,14 @@
   
   <a href="https://www.w3schools.com/css/" target="_blank" title="CSS3">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" width="40" height="40"/>
+  </a>
+
+  <a href="https://jestjs.io/" target="_blank" title="Jest">
+	  <img src="https://jestjs.io/img/favicon/favicon.ico" alt="Jest" width="40" height="40"/>
+  </a>
+  
+  <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank" title="Testing Library">
+	  <img src="https://testing-library.com/img/octopus-64x64.png" alt="Testing Library" width="40" height="40"/>
   </a>
   
   <a href="https://arcaptcha.co/fa/" target="_blank" title="ArCaptcha">
@@ -58,5 +68,6 @@
   </a>
 </p>
 
-### * Screenshot:
+### \* Screenshot:
+
 <img src="sample.png" alt="Project sample screenshot" width="800" height="350">
