@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { GeneratePdfButton } from "../components/index.ts";
@@ -9,7 +9,7 @@ describe("GeneratePdfButton", () => {
 		buttonSpan,
 		downloadForm = jest.fn(); // This is a mock function
 
-	beforeAll(() => {
+	beforeEach(() => {
 		// Render the component with default props
 		render(<GeneratePdfButton btnText="دانلود فرم" isDisable={true} />);
 
@@ -47,6 +47,8 @@ describe("GeneratePdfButton", () => {
 	});
 
 	it("Should validate elements props when the button is enable", () => {
+		cleanup();
+
 		// Render the component with new props then get elements
 		render(<GeneratePdfButton btnText="دانلود فرم" isDisable={false} />);
 

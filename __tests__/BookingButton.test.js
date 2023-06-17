@@ -1,12 +1,13 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { act } from "react-dom/test-utils";
 
-import { BookingButton } from "../components/index.ts";
+import { BookingButton, GeneratePdfButton } from "../components/index.ts";
 
 describe("BookingButton", () => {
 	let button, buttonSVG, buttonSpan;
 
-	beforeAll(() => {
+	beforeEach(() => {
 		// Render the component with default props
 		render(<BookingButton btnText="ثبت نوبت" isDisable={true} />);
 
@@ -44,7 +45,9 @@ describe("BookingButton", () => {
 	});
 
 	it("Should validate elements props when the button is enable", () => {
-		// Render the component with new props then get elements
+		cleanup();
+
+		// Rerender the target component after a cleanup function
 		render(<BookingButton btnText="ثبت نوبت" isDisable={false} />);
 
 		const button = screen.getByTestId("booking-button");
@@ -54,13 +57,18 @@ describe("BookingButton", () => {
 		expect(button).toHaveClass("cursor-pointer");
 	});
 
-	it("Should handle events", () => {
-		fireEvent.click(button);
+	it("Should handle events", async () => {
+		cleanup();
 
-		waitFor(() => {
+		// Rerender the target component after a cleanup function
+		render(<GeneratePdfButton btnText="دانلود فرم" isDisable={false} />);
+
+		act(() => fireEvent.click(button));
+
+		await waitFor(() => {
 			expect(screen.getByTestId("generate-pdf-button")).toBeEnabled();
-			expect(button).not.toHaveAttribute("disabled");
-			expect(button).toHaveClass("cursor-pointer");
+			expect(screen.getByTestId("generate-pdf-button")).not.toHaveAttribute("disabled");
+			expect(screen.getByTestId("generate-pdf-button")).toHaveClass("cursor-pointer");
 		});
 	});
 });

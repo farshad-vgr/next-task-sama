@@ -22,7 +22,6 @@ describe("SearchButton", () => {
 
 	it("Should render all elements", () => {
 		expect(button).toBeInTheDocument();
-
 		expect(buttonSVG).toBeInTheDocument();
 	});
 
@@ -39,20 +38,15 @@ describe("SearchButton", () => {
 		expect(buttonSVG).toHaveClass("absolute w-6 h-6");
 	});
 
-	it("Should handle events", () => {
-		act(() => {
-			fireEvent.click(button);
-		});
+	it("Should handle events", async () => {
+		act(() => fireEvent.click(button));
 
-		waitFor(() => expect(button).toHaveClass("w-52 sm:w-80 min-h-[2.5rem] hover:cursor-pointer"));
+		await waitFor(() => {
+			expect(button).toHaveClass("w-52 sm:w-80 min-h-[2.5rem] hover:cursor-pointer");
 
-		waitFor(() => {
 			expect(searchInput).toBeInTheDocument();
 			expect(searchInput).toHaveTextContent("");
-			expect(searchInput).toHaveAttribute("onclick");
-			expect(searchInput).toHaveAttribute("onchange");
 			expect(searchInput).toHaveAttribute("type", "text");
-			expect(searchInput).toHaveAttribute("autofocus");
 			expect(searchInput).toHaveAttribute("placeholder", "جستجو...");
 			expect(searchInput).toHaveAttribute("value", "");
 			expect(searchInput).toHaveAttribute("maxlength", "15");

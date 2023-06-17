@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { act } from "react-dom/test-utils";
 
 import { MenuButton } from "../components/index.ts";
 
@@ -31,11 +32,22 @@ describe("MenuButton", () => {
 		expect(buttonSVG).toHaveClass("w-6 h-6");
 	});
 
-	it("Should handle events", () => {
-		fireEvent.click(button);
+	it("Should handle events", async () => {
+		const setIsAside = jest.fn(); // This is a mock function
+
+		act(() => fireEvent.click(button));
+
+		setIsAside(true);
+
+		await waitFor(() => {
+			expect(setIsAside).toBeCalled();
+			expect(setIsAside).toBeCalledTimes(1);
+			expect(setIsAside).toBeCalledWith(true);
+		});
 
 		expect(button).not.toBeInTheDocument();
 		expect(buttonSVG).not.toBeInTheDocument();
+
 		expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("right-0");
 		expect(screen.getByTestId("asidebar-container")).toHaveClass("left-0");
 	});

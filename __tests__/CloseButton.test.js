@@ -35,7 +35,7 @@ describe("CloseButton", () => {
 	});
 
 	it("Should handle events", async () => {
-		// Render the target component
+		// Rerender the target component
 		render(<Asidebar setIsAside={setIsAside} />);
 
 		act(() => fireEvent.click(button));

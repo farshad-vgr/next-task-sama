@@ -60,8 +60,8 @@ describe("ConfirmButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		mockUrl = mockUrl.replace(/confirmation/i, "booking");
+		const newMockUrl = mockUrl.replace(/confirmation/i, "booking");
 
-		expect(mockUrl).toBe("/booking");
+		expect(newMockUrl).toBe("/booking");
 	});
 });

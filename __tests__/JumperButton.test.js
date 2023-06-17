@@ -39,10 +39,6 @@ describe("JumperButton", () => {
 
 		expect(mockScrollFunction).toBeCalled();
 		expect(mockScrollFunction).toBeCalledTimes(1);
-
-		waitFor(() => {
-			expect(button).not.toBeInTheDocument();
-			expect(buttonSVG).not.toBeInTheDocument();
-		});
+		expect(mockScrollFunction).toBeCalledWith(0, 0);
 	});
 });

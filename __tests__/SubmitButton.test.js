@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { SubmitButton } from "../components/index.ts";
@@ -7,9 +7,9 @@ describe("SubmitButton", () => {
 	let button,
 		buttonSVG,
 		buttonSpan,
-		mockUrl = global.window.location.pathname + "confirmation"; // This is a mock url
+		mockUrl = global.window.location.pathname; // This is a mock url
 
-	beforeAll(() => {
+	beforeEach(() => {
 		// Render the component with default props
 		render(<SubmitButton btnText="ورود" isCaptchaValid={false} />);
 
@@ -47,7 +47,9 @@ describe("SubmitButton", () => {
 	});
 
 	it("Should validate elements props when the button is enable", () => {
-		// Render the component with new props then get elements
+		cleanup();
+
+		// Rerender the target component with new props after a cleanup function
 		render(<SubmitButton btnText="ورود" isCaptchaValid={true} />);
 
 		const button = screen.getByTestId("submit-button");
@@ -60,8 +62,8 @@ describe("SubmitButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		mockUrl = mockUrl.replace(/confirmation/i, "booking");
+		const newMockUrl = mockUrl + "booking";
 
-		expect(mockUrl).toBe("/booking");
+		expect(newMockUrl).toBe("/booking");
 	});
 });

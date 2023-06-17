@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/re
 import "@testing-library/jest-dom";
 import { act } from "react-dom/test-utils";
 
-import Asidebar from "../components/Asidebar/Asidebar";
+import { Asidebar } from "../components/index.ts";
 
 describe("Asidebar", () => {
 	let asidebarBackdrop,
