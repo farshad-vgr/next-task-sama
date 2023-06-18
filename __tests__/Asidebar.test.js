@@ -5,15 +5,12 @@ import { act } from "react-dom/test-utils";
 import { Asidebar } from "../components/index.ts";
 
 describe("Asidebar", () => {
-	let asidebarBackdrop,
-		asidebarContainer,
-		asidebarSearchButtonWrapper,
-		asidebarNavbarWrapper,
-		setIsAside = jest.fn(); // This is a mock function
+	const mockFunction = jest.fn().mockName("setIsAside"); // This is a mock function
+	let asidebarBackdrop, asidebarContainer, asidebarSearchButtonWrapper, asidebarNavbarWrapper;
 
 	beforeEach(() => {
 		// Render the component with default props
-		render(<Asidebar isAside={false} setIsAside={setIsAside} />);
+		render(<Asidebar isAside={false} setIsAside={mockFunction} />);
 
 		asidebarBackdrop = screen.getByTestId("asidebar-backdrop");
 		asidebarContainer = screen.getByTestId("asidebar-container");
@@ -43,7 +40,7 @@ describe("Asidebar", () => {
 		cleanup();
 
 		// Rerender the target component with new props after a cleanup function
-		render(<Asidebar isAside={true} setIsAside={setIsAside} />);
+		render(<Asidebar isAside={true} setIsAside={mockFunction} />);
 
 		expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("right-0");
 		expect(screen.getByTestId("asidebar-container")).toHaveClass("left-0");
@@ -53,14 +50,14 @@ describe("Asidebar", () => {
 		cleanup();
 
 		// Rerender the target component after a cleanup function
-		render(<Asidebar setIsAside={setIsAside} />);
+		render(<Asidebar setIsAside={mockFunction} />);
 
 		act(() => fireEvent.click(screen.getByTestId("asidebar-backdrop")));
 
 		await waitFor(() => {
-			expect(setIsAside).toBeCalled();
-			expect(setIsAside).toBeCalledTimes(1);
-			expect(setIsAside).toBeCalledWith(false);
+			expect(mockFunction).toBeCalled();
+			expect(mockFunction).toBeCalledTimes(1);
+			expect(mockFunction).toBeCalledWith(false);
 
 			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("-right-full");
 			expect(screen.getByTestId("asidebar-container")).toHaveClass("-left-60");
@@ -71,14 +68,14 @@ describe("Asidebar", () => {
 		cleanup();
 
 		// Rerender the target component after a cleanup function
-		render(<Asidebar setIsAside={setIsAside} />);
+		render(<Asidebar setIsAside={mockFunction} />);
 
 		act(() => fireEvent.click(screen.getByTestId("asidebar-navbar-wrapper")));
 
 		await waitFor(() => {
-			expect(setIsAside).toBeCalled();
-			expect(setIsAside).toBeCalledTimes(2);
-			expect(setIsAside).toBeCalledWith(false);
+			expect(mockFunction).toBeCalled();
+			expect(mockFunction).toBeCalledTimes(2);
+			expect(mockFunction).toBeCalledWith(false);
 
 			expect(screen.getByTestId("asidebar-backdrop")).toHaveClass("-right-full");
 			expect(screen.getByTestId("asidebar-container")).toHaveClass("-left-60");

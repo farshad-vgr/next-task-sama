@@ -6,7 +6,7 @@ import { JumperButton } from "../components/index.ts";
 describe("JumperButton", () => {
 	let button,
 		buttonSVG,
-		mockScrollFunction = (window.scrollTo = jest.fn()); // This is a mock function
+		mockFunction = (window.scrollTo = jest.fn().mockName("scrollTo")); // This is a mock function
 
 	beforeEach(() => {
 		render(<JumperButton buttonColor="red" />);
@@ -37,8 +37,8 @@ describe("JumperButton", () => {
 	it("Should handle events", () => {
 		fireEvent.click(button);
 
-		expect(mockScrollFunction).toBeCalled();
-		expect(mockScrollFunction).toBeCalledTimes(1);
-		expect(mockScrollFunction).toBeCalledWith(0, 0);
+		expect(mockFunction).toBeCalled();
+		expect(mockFunction).toBeCalledTimes(1);
+		expect(mockFunction).toBeCalledWith(0, 0);
 	});
 });

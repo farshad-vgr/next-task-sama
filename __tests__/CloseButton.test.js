@@ -5,12 +5,11 @@ import { act } from "react-dom/test-utils";
 import { CloseButton, Asidebar } from "../components/index.ts";
 
 describe("CloseButton", () => {
-	let button,
-		buttonSVG,
-		setIsAside = jest.fn(); // This is a mock function
+	const mockFunction = jest.fn().mockName("setIsAside"); // This is a mock function
+	let button, buttonSVG;
 
 	beforeEach(() => {
-		render(<CloseButton setIsAside={setIsAside} />);
+		render(<CloseButton setIsAside={mockFunction} />);
 
 		button = screen.getByTestId("close-button");
 		buttonSVG = screen.getByTestId("close-button-svg");
@@ -36,14 +35,14 @@ describe("CloseButton", () => {
 
 	it("Should handle events", async () => {
 		// Rerender the target component
-		render(<Asidebar setIsAside={setIsAside} />);
+		render(<Asidebar setIsAside={mockFunction} />);
 
 		act(() => fireEvent.click(button));
 
 		await waitFor(() => {
-			expect(setIsAside).toBeCalled();
-			expect(setIsAside).toBeCalledTimes(1);
-			expect(setIsAside).toBeCalledWith(false);
+			expect(mockFunction).toBeCalled();
+			expect(mockFunction).toBeCalledTimes(1);
+			expect(mockFunction).toBeCalledWith(false);
 
 			expect(button).toBeInTheDocument();
 			expect(buttonSVG).toBeInTheDocument();

@@ -57,15 +57,18 @@ describe("GeneratePdfButton", () => {
 	});
 
 	it("Should handle events", async () => {
-		const downloadForm = jest.fn(); // This is a mock function
+		const mockedDownloadForm = jest.fn((refElement) => refElement.current); // This is a mock function
+		const mockedRefElement = { current: "form" };
 
 		fireEvent.click(button);
 
-		downloadForm();
-
 		await waitFor(() => {
-			expect(downloadForm).toBeCalled();
-			expect(downloadForm).toBeCalledTimes(1);
+			mockedDownloadForm(mockedRefElement); // Calling mock function
+
+			expect(mockedDownloadForm).toBeCalled();
+			expect(mockedDownloadForm).toBeCalledTimes(1);
+			expect(mockedDownloadForm).toBeCalledWith({ current: "form" });
+			expect(mockedDownloadForm.mock.results[0].value).toBe("form");
 		});
 	});
 });
