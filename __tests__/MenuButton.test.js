@@ -35,14 +35,20 @@ describe("MenuButton", () => {
 	it("Should handle events", async () => {
 		const setIsAside = jest.fn(); // This is a mock function
 
-		act(() => fireEvent.click(button));
-
-		setIsAside(true);
+		act(() => {
+			fireEvent.click(button);
+			setIsAside(true);
+		});
 
 		await waitFor(() => {
 			expect(setIsAside).toBeCalled();
 			expect(setIsAside).toBeCalledTimes(1);
 			expect(setIsAside).toBeCalledWith(true);
+
+			expect(Object.keys(setIsAside.mock).includes("calls")).toBe(true);
+			expect(setIsAside.mock.calls).toHaveLength(1);
+			expect(setIsAside.mock.calls[ 0 ][ 0 ]).toBe(true);
+			expect(setIsAside.mock.results[ 0 ].value).toBe(undefined);
 		});
 
 		expect(button).not.toBeInTheDocument();

@@ -4,10 +4,7 @@ import "@testing-library/jest-dom";
 import { GeneratePdfButton } from "../components/index.ts";
 
 describe("GeneratePdfButton", () => {
-	let button,
-		buttonSVG,
-		buttonSpan,
-		downloadForm = jest.fn(); // This is a mock function
+	let button, buttonSVG, buttonSpan;
 
 	beforeEach(() => {
 		// Render the component with default props
@@ -59,10 +56,14 @@ describe("GeneratePdfButton", () => {
 		expect(button).toHaveClass("cursor-pointer");
 	});
 
-	it("Should handle events", () => {
+	it("Should handle events", async () => {
+		const downloadForm = jest.fn(); // This is a mock function
+
 		fireEvent.click(button);
 
-		waitFor(() => {
+		downloadForm();
+
+		await waitFor(() => {
 			expect(downloadForm).toBeCalled();
 			expect(downloadForm).toBeCalledTimes(1);
 		});
