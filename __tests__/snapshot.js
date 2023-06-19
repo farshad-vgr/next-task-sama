@@ -9,6 +9,7 @@ import {
 	Asidebar,
 	SearchButton,
 	SearchInput,
+	SignupInput,
 	JumperButton,
 	GeneratePdfButton,
 } from "../components/index.ts";
@@ -56,6 +57,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes SearchInput unchanged?", () => {
 		const { container } = render(<SearchInput />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes SignupInput unchanged?", () => {
+		const { container } = render(<SignupInput />);
 		expect(container).toMatchSnapshot();
 	});
 
