@@ -12,7 +12,14 @@ const SignupInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Ele
 			<section>
 				<div className="relative flex justify-center w-full overflow-hidden signup-input confirm-input">
 					<div className="flex justify-center items-center absolute right-0 w-10 h-10 leading-8 outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+						<svg
+							data-testid="signup-input-svg"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							strokeWidth={1.5}
+							stroke="currentColor"
+							className="w-6 h-6">
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"
@@ -22,6 +29,7 @@ const SignupInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Ele
 					</div>
 
 					<input
+						data-testid="signup-input"
 						className="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
 						autoFocus
 						required
@@ -30,7 +38,7 @@ const SignupInput = ({ inputValue, setInputValue, placeHolder }: Props): JSX.Ele
 						minLength={3}
 						maxLength={15}
 						value={inputValue}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
+						onChange={(e) => setInputValue(e.target.value)}
 					/>
 				</div>
 			</section>

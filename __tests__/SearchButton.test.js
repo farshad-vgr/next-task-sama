@@ -1,23 +1,17 @@
-import { act } from "react-dom/test-utils";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { act } from "react-dom/test-utils";
 import "@testing-library/jest-dom";
 
 import { SearchButton, SearchInput } from "../components/index.ts";
 
 describe("SearchButton", () => {
-	let button, buttonSVG, searchInput;
+	let button, buttonSVG;
 
 	beforeEach(() => {
-		render(
-			<>
-				<SearchButton />
-				<SearchInput />
-			</>,
-		);
+		render(<SearchButton />);
 
 		button = screen.getByTestId("search-button");
 		buttonSVG = screen.getByTestId("search-button-svg");
-		searchInput = screen.getByTestId("search-input");
 	});
 
 	it("Should render all elements", () => {
@@ -39,6 +33,10 @@ describe("SearchButton", () => {
 	});
 
 	it("Should handle events", async () => {
+		render(<SearchInput />);
+
+		const searchInput = screen.getByTestId("search-input");
+
 		act(() => fireEvent.click(button));
 
 		await waitFor(() => {

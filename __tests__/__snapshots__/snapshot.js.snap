@@ -535,6 +535,19 @@ exports[`Snapshot Testing Renderes SearchButton unchanged? 1`] = `
 </div>
 `;
 
+exports[`Snapshot Testing Renderes SearchInput unchanged? 1`] = `
+<div>
+  <input
+    class="absolute top-1 right-2 ml-2 -mr-1 p-1 pb-0 pr-3 w-[80%] sm:w-[88%] h-[2rem] rounded-full outline-none text-black"
+    data-testid="search-input"
+    maxlength="15"
+    placeholder="جستجو..."
+    type="text"
+    value=""
+  />
+</div>
+`;
+
 exports[`Snapshot Testing Renderes SubmitButton unchanged? 1`] = `
 <div>
   <button

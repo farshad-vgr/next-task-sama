@@ -8,6 +8,7 @@ import {
 	MenuButton,
 	Asidebar,
 	SearchButton,
+	SearchInput,
 	JumperButton,
 	GeneratePdfButton,
 } from "../components/index.ts";
@@ -50,6 +51,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes SearchButton unchanged?", () => {
 		const { container } = render(<SearchButton />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes SearchInput unchanged?", () => {
+		const { container } = render(<SearchInput />);
 		expect(container).toMatchSnapshot();
 	});
 
