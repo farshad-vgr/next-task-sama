@@ -17,7 +17,7 @@ export default function Header() {
 						</div>
 
 						<div className="absolute top-0 right-3 md:right-5 mt-1">
-							<Image src="/assets/images/logo.png" alt="Logo" width={120} height={100} style={{ width: "auto", height: "auto" }} />
+							<Image src="/assets/images/logo.png" alt="Logo" loading="lazy" width={120} height={100} style={{ width: "auto", height: "auto" }} />
 						</div>
 
 						<div className="block sm:hidden">

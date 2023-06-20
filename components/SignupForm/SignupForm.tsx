@@ -16,7 +16,7 @@ const SignupForm = () => {
 					e.preventDefault();
 					router.push("/confirmation");
 				}}>
-				<SignupInput inputValue={inputValue} setInputValue={setInputValue} placeHolder="کدملی / شماره موبایل / شماره قبض" />
+				<SignupInput inputValue={inputValue} setInputValue={setInputValue} />
 
 				<CaptchaBox setIsCaptchaValid={setIsCaptchaValid} inputValue={inputValue} />
 

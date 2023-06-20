@@ -10,6 +10,7 @@ import {
 	SearchButton,
 	SearchInput,
 	SignupInput,
+	ConfirmInput,
 	JumperButton,
 	GeneratePdfButton,
 } from "../components/index.ts";
@@ -62,6 +63,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes SignupInput unchanged?", () => {
 		const { container } = render(<SignupInput />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes ConfirmInput unchanged?", () => {
+		const { container } = render(<ConfirmInput />);
 		expect(container).toMatchSnapshot();
 	});
 

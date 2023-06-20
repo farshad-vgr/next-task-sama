@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { useRouter } from "next/router";
 
-import { SignupInput, ConfirmButton } from "../index";
+import { ConfirmInput, ConfirmButton } from "../index";
 
 const ConfirmForm = () => {
 	const router = useRouter();
@@ -15,7 +15,7 @@ const ConfirmForm = () => {
 					e.preventDefault();
 					router.push("/booking");
 				}}>
-				<SignupInput inputValue={inputValue} setInputValue={setInputValue} placeHolder="کد پیامک شده را وارد کنید" />
+				<ConfirmInput inputValue={inputValue} setInputValue={setInputValue} />
 
 				<ConfirmButton btnText="تایید" isDisable={inputValue.length > 0 ? false : true} />
 			</form>

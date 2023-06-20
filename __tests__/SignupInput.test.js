@@ -7,11 +7,10 @@ describe("SignupInput", () => {
 	let signupInput, signupInputSVG;
 
 	const inputValue = "entered text",
-		placeholder = "pHolder",
 		mockSetInputValue = jest.fn().mockName("setInputValue");
 
 	beforeEach(() => {
-		render(<SignupInput inputValue={inputValue} setInputValue={mockSetInputValue} placeHolder={placeholder} />);
+		render(<SignupInput inputValue={inputValue} setInputValue={mockSetInputValue} />);
 
 		signupInput = screen.getByTestId("signup-input");
 		signupInputSVG = screen.getByTestId("signup-input-svg");
@@ -24,7 +23,7 @@ describe("SignupInput", () => {
 
 	it("Should validate elements props", () => {
 		expect(signupInput).toHaveAttribute("type", "number");
-		expect(signupInput).toHaveAttribute("placeholder", "pHolder");
+		expect(signupInput).toHaveAttribute("placeholder", "کدملی / شماره موبایل / شماره قبض");
 		expect(signupInput).toHaveAttribute("value", "entered text");
 		expect(signupInput).toHaveAttribute("minlength", "3");
 		expect(signupInput).toHaveAttribute("maxlength", "15");

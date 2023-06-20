@@ -26,6 +26,7 @@ export { default as ConfirmForm } from "./ConfirmForm/ConfirmForm";
 export { default as BookingForm } from "./BookingForm/BookingForm";
 export { default as FormHeader } from "./FormHeader/FormHeader";
 export { default as SignupInput } from "./SignupInput/SignupInput";
+export { default as ConfirmInput } from "./ConfirmInput/ConfirmInput";
 export { default as BookingFirstName } from "./BookingFirstName/BookingFirstName";
 export { default as BookingLastName } from "./BookingLastName/BookingLastName";
 export { default as BookingGender } from "./BookingGender/BookingGender";

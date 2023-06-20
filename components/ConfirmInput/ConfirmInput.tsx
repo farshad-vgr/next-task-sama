@@ -1,18 +1,18 @@
-import React, { memo } from "react";
+import { memo } from "react";
 
 interface Props {
 	inputValue: string;
 	setInputValue: (e: string) => void;
 }
 
-const SignupInput = ({ inputValue, setInputValue }: Props): JSX.Element => {
+const ConfirmInput = ({ inputValue, setInputValue }: Props): JSX.Element => {
 	return (
 		<>
 			<section>
 				<div className="relative flex justify-center w-full overflow-hidden signup-input confirm-input">
 					<div className="flex justify-center items-center absolute right-0 w-10 h-10 leading-8 outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]">
 						<svg
-							data-testid="signup-input-svg"
+							data-testid="confirm-input-svg"
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
 							viewBox="0 0 24 24"
@@ -28,12 +28,12 @@ const SignupInput = ({ inputValue, setInputValue }: Props): JSX.Element => {
 					</div>
 
 					<input
-						data-testid="signup-input"
+						data-testid="confirm-input"
 						className="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
 						autoFocus
 						required
 						type="number"
-						placeholder="کدملی / شماره موبایل / شماره قبض"
+						placeholder="کد پیامک شده را وارد کنید"
 						minLength={3}
 						maxLength={15}
 						value={inputValue}
@@ -45,4 +45,4 @@ const SignupInput = ({ inputValue, setInputValue }: Props): JSX.Element => {
 	);
 };
 
-export default memo(SignupInput);
+export default memo(ConfirmInput);
