@@ -201,23 +201,6 @@ exports[`Snapshot Testing Renderes BookingButton unchanged? 1`] = `
 </div>
 `;
 
-exports[`Snapshot Testing Renderes CaptchaBox unchanged? 1`] = `
-<div>
-  <div
-    class="relative self-center captcha-box opacity-50"
-    data-testid="captcha-box"
-  >
-    <div
-      class="absolute w-full h-full cursor-not-allowed z-[5] block"
-      data-testid="captcha-box-disabler"
-    />
-    <div
-      id="arcaptcha-widget-lj4fp8utq88m9d32u5a"
-    />
-  </div>
-</div>
-`;
-
 exports[`Snapshot Testing Renderes CloseButton unchanged? 1`] = `
 <div>
   <button
