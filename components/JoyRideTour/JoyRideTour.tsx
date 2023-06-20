@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/compat/router";
 import Joyride from "react-joyride";
 
 const TOUR_STEPS_SIGNUP_FORM = [
@@ -151,7 +151,7 @@ const JoyRideTour = () => {
 
 	return (
 		<>
-			{router.pathname === "/" && (
+			{router?.pathname === "/" && (
 				<Joyride
 					steps={TOUR_STEPS_SIGNUP_FORM}
 					styles={TOUR_STYLES}
@@ -166,7 +166,7 @@ const JoyRideTour = () => {
 				/>
 			)}
 
-			{router.pathname === "/confirmation" && (
+			{router?.pathname === "/confirmation" && (
 				<Joyride
 					steps={TOUR_STEPS_CONFIRM_FORM}
 					styles={TOUR_STYLES}
@@ -181,7 +181,7 @@ const JoyRideTour = () => {
 				/>
 			)}
 
-			{router.pathname === "/booking" && (
+			{router?.pathname === "/booking" && (
 				<Joyride
 					steps={TOUR_STEPS_BOOKING_FORM}
 					styles={TOUR_STYLES}

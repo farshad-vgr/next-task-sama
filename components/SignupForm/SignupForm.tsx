@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/compat/router";
 
 import { SignupInput, CaptchaBox, SubmitButton } from "../index";
 
@@ -15,7 +15,7 @@ const SignupForm = () => {
 				className="flex flex-col justify-center gap-4 w-full"
 				onSubmit={(e) => {
 					e.preventDefault();
-					router.push("/confirmation");
+					router?.push("/confirmation");
 				}}>
 				<SignupInput inputValue={inputValue} setInputValue={setInputValue} />
 

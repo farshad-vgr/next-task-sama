@@ -3,9 +3,9 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import mockRouter from "next-router-mock";
 
-import { CaptchaBox, SignupForm, SignupInput, SubmitButton } from "../components/index.ts";
+import { SignupForm } from "../components/index.ts";
 
-jest.mock("next/router", () => require("next-router-mock"));
+jest.mock("next/compat/router", () => require("next-router-mock"));
 
 describe("SignupForm", () => {
 	let signupForm, signupInput, captchaBox, submitButton;

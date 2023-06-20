@@ -5,13 +5,10 @@ import mockRouter from "next-router-mock";
 
 import { SubmitButton } from "../components/index.ts";
 
-jest.mock("next/router", () => require("next-router-mock"));
+jest.mock("next/compat/router", () => require("next-router-mock"));
 
 describe("SubmitButton", () => {
-	let button,
-		buttonSVG,
-		buttonSpan,
-		mockUrl = global.window.location.pathname; // This is a mock url
+	let button, buttonSVG, buttonSpan;
 
 	beforeEach(() => {
 		// Render the component with default props
