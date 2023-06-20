@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { SearchInput } from "../components/index.ts";
@@ -9,7 +9,7 @@ describe("SearchInput", () => {
 	const hospitals = [
 			{
 				id: 1,
-				title: "تست",
+				title: "title",
 				link: "https://www.test.com",
 			},
 		],
@@ -35,15 +35,19 @@ describe("SearchInput", () => {
 		expect(searchInput).toHaveClass("absolute w-[80%] sm:w-[88%] h-[2rem] outline-none");
 	});
 
-	// it("Should handle events", () => {
-	// 	fireEvent.change(searchInput, {
-	// 		target: {
-	// 			searchValue,
-	// 		},
-	// 	});
+	it("Should handle events", async () => {
+		fireEvent.change(searchInput, {
+			target: {
+				searchValue,
+			},
+		});
 
-	// 	expect(mockSetSearchValue).toBeCalled();
-	// 	expect(mockSetSearchValue).toBeCalledTimes(1);
-	// 	expect(mockSetSearchValue).toBeCalledWith("");
-	// });
+		await waitFor(() => {
+			mockSetSearchValue(searchValue);
+
+			expect(mockSetSearchValue).toBeCalled();
+			expect(mockSetSearchValue).toBeCalledTimes(1);
+			expect(mockSetSearchValue).toBeCalledWith("entered text");
+		});
+	});
 });

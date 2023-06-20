@@ -25,9 +25,18 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 
 	return (
 		<>
-			<div className="flex justify-start items-center gap-2 h-10 outline-none border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0] bg-white">
+			<div
+				data-testid="persian-date-picker"
+				className="flex justify-start items-center gap-2 h-10 outline-none border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0] bg-white">
 				<div className="flex justify-center items-center absolute right-2 w-10 h-10 leading-8 outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+					<svg
+						data-testid="persian-date-picker-svg"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						strokeWidth={1.5}
+						stroke="currentColor"
+						className="w-6 h-6">
 						<path
 							strokeLinecap="round"
 							strokeLinejoin="round"
@@ -36,7 +45,11 @@ const PersianDatePicker = ({ bookingFormValues, setBookingFormValues, placeHolde
 					</svg>
 				</div>
 
-				<label className={`pr-[3.5rem] pt-2 text-gray-400 ${dateColor === "black" && "opacity-0 transition-all duration-300"}`}>{placeHolder}:</label>
+				<label
+					data-testid="persian-date-picker-label"
+					className={`pr-[3.5rem] pt-2 text-gray-400 ${dateColor === "black" && "opacity-0 transition-all duration-300"}`}>
+					{placeHolder}:
+				</label>
 
 				<DatePicker
 					className="red"

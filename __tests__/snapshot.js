@@ -2,18 +2,19 @@ import { render } from "@testing-library/react";
 
 import {
 	SubmitButton,
-	ConfirmButton,
-	BookingButton,
-	CloseButton,
-	MenuButton,
-	Asidebar,
-	SearchButton,
-	SearchInput,
 	SignupInput,
+	ConfirmButton,
 	ConfirmInput,
 	ConfirmForm,
-	JumperButton,
+	BookingButton,
 	GeneratePdfButton,
+	MenuButton,
+	PersianDatePicker,
+	SearchButton,
+	SearchInput,
+	Asidebar,
+	CloseButton,
+	JumperButton,
 } from "../components/index.ts";
 
 describe("Snapshot Testing", () => {
@@ -44,6 +45,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes MenuButton unchanged?", () => {
 		const { container } = render(<MenuButton />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes PersianDatePicker unchanged?", () => {
+		const { container } = render(<PersianDatePicker />);
 		expect(container).toMatchSnapshot();
 	});
 
