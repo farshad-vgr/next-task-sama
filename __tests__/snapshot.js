@@ -10,6 +10,7 @@ import {
 	SearchButton,
 	SearchInput,
 	SignupInput,
+	SignupForm,
 	ConfirmInput,
 	JumperButton,
 	GeneratePdfButton,
@@ -65,6 +66,11 @@ describe("Snapshot Testing", () => {
 		const { container } = render(<SignupInput />);
 		expect(container).toMatchSnapshot();
 	});
+
+	// it("Renderes SignupForm unchanged?", () => {
+	// 	const { container } = render(<SignupForm />);
+	// 	expect(container).toMatchSnapshot();
+	// });
 
 	it("Renderes ConfirmInput unchanged?", () => {
 		const { container } = render(<ConfirmInput />);

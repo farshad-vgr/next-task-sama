@@ -11,8 +11,9 @@ const SignupForm = () => {
 	return (
 		<>
 			<form
+				data-testid="signup-form"
 				className="flex flex-col justify-center gap-4 w-full"
-				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+				onSubmit={(e) => {
 					e.preventDefault();
 					router.push("/confirmation");
 				}}>

@@ -1,10 +1,11 @@
-import { useRef, memo, Fragment } from "react";
+import { useRef, memo } from "react";
 import axios from "axios";
 import { ArcaptchaWidget } from "arcaptcha-react";
 
 const CaptchaBox = ({ setIsCaptchaValid, inputValue }) => {
 	const ArRef = useRef();
 
+	// This function validate user answer with correct fetched value
 	const getToken = (token) => {
 		axios
 			.post("https://api.arcaptcha.co/arcaptcha/api/verify", {
