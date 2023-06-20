@@ -10,8 +10,9 @@ const ConfirmForm = () => {
 	return (
 		<>
 			<form
+				data-testid="confirm-form"
 				className="flex flex-col justify-center gap-4 w-full"
-				onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+				onSubmit={(e) => {
 					e.preventDefault();
 					router?.push("/booking");
 				}}>

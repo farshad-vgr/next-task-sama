@@ -260,6 +260,79 @@ exports[`Snapshot Testing Renderes ConfirmButton unchanged? 1`] = `
 </div>
 `;
 
+exports[`Snapshot Testing Renderes ConfirmForm unchanged? 1`] = `
+<div>
+  <form
+    class="flex flex-col justify-center gap-4 w-full"
+    data-testid="confirm-form"
+  >
+    <section>
+      <div
+        class="relative flex justify-center w-full overflow-hidden signup-input confirm-input"
+      >
+        <div
+          class="flex justify-center items-center absolute right-0 w-10 h-10 leading-8 outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]"
+        >
+          <svg
+            class="w-6 h-6"
+            data-testid="confirm-input-svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <input
+          class="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
+          data-testid="confirm-input"
+          maxlength="15"
+          minlength="3"
+          placeholder="کد پیامک شده را وارد کنید"
+          required=""
+          type="number"
+          value=""
+        />
+      </div>
+    </section>
+    <button
+      class="flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg cursor-not-allowed text-black bg-slate-500 opacity-50"
+      data-testid="confirm-button"
+      disabled=""
+      type="submit"
+    >
+      <svg
+        class="w-6 h-6"
+        data-testid="confirm-button-svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <span
+        class="mt-2"
+        data-testid="confirm-button-span"
+      >
+        تایید
+      </span>
+    </button>
+  </form>
+</div>
+`;
+
 exports[`Snapshot Testing Renderes ConfirmInput unchanged? 1`] = `
 <div>
   <section>
