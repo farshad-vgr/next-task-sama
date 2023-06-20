@@ -23,7 +23,7 @@ const CaptchaBox = ({ setIsCaptchaValid, inputValue }) => {
 
 	return (
 		<>
-			<div className={`relative self-center captcha-box ${inputValue.length > 0 ? "" : "opacity-50"}`}>
+			<div data-testid="captcha-box" className={`relative self-center captcha-box ${inputValue.length > 0 ? "" : "opacity-50"}`}>
 				<div className={`absolute w-full h-full cursor-not-allowed z-[5] ${inputValue.length > 0 ? "hidden" : "block"}`}></div>
 				<ArcaptchaWidget ref={ArRef} site-key="i6qqnsxay6" callback={getToken} />
 			</div>
