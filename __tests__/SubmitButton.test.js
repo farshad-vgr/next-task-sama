@@ -1,7 +1,11 @@
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import { act } from "react-dom/test-utils";
+import { render, screen, fireEvent, cleanup, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import mockRouter from "next-router-mock";
 
 import { SubmitButton } from "../components/index.ts";
+
+jest.mock("next/router", () => require("next-router-mock"));
 
 describe("SubmitButton", () => {
 	let button,
@@ -59,11 +63,16 @@ describe("SubmitButton", () => {
 		expect(button).toHaveClass("cursor-pointer");
 	});
 
-	it("Should handle events", () => {
-		fireEvent.click(button);
+	it("Should handle events", async () => {
+		act(() => fireEvent.click(button));
 
-		const newMockUrl = mockUrl + "booking";
+		mockRouter.push("/confirmation");
 
-		expect(newMockUrl).toBe("/booking");
+		await waitFor(() =>
+			expect(mockRouter).toMatchObject({
+				asPath: "/confirmation",
+				pathname: "/confirmation",
+			}),
+		);
 	});
 });
