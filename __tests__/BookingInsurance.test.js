@@ -48,6 +48,9 @@ describe("BookingInsurance", () => {
 		expect(bookingInsuranceInputOne).toHaveAttribute("id", "false");
 		expect(bookingInsuranceInputOne).toHaveAttribute("name", "insurance");
 		expect(bookingInsuranceInputOne).toHaveAttribute("value", "false");
+		expect(bookingInsuranceInputOne).toBeChecked();
+		expect(bookingInsuranceInputOne["checked"]).toBeTruthy();
+		expect(bookingInsuranceInputOne["_wrapperState"]["initialChecked"]).toBeTruthy();
 
 		expect(bookingInsuranceLabelOne).toHaveAttribute("for", "false");
 		expect(bookingInsuranceLabelOne).toHaveTextContent("ندارد");
@@ -56,6 +59,9 @@ describe("BookingInsurance", () => {
 		expect(bookingInsuranceInputTwo).toHaveAttribute("id", "true");
 		expect(bookingInsuranceInputTwo).toHaveAttribute("name", "insurance");
 		expect(bookingInsuranceInputTwo).toHaveAttribute("value", "true");
+		expect(bookingInsuranceInputTwo).not.toBeChecked();
+		expect(bookingInsuranceInputTwo["checked"]).toBeFalsy();
+		expect(bookingInsuranceInputTwo["_wrapperState"]["initialChecked"]).toBeFalsy();
 
 		expect(bookingInsuranceLabelTwo).toHaveAttribute("for", "true");
 		expect(bookingInsuranceLabelTwo).toHaveTextContent("دارد");

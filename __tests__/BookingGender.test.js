@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import { BookingGender } from "../components/index.ts";
@@ -43,6 +43,9 @@ describe("BookingGender", () => {
 		expect(bookingGenderInputOne).toHaveAttribute("id", "male");
 		expect(bookingGenderInputOne).toHaveAttribute("name", "gender");
 		expect(bookingGenderInputOne).toHaveAttribute("value", "male");
+		expect(bookingGenderInputOne).toBeChecked();
+		expect(bookingGenderInputOne["checked"]).toBeTruthy();
+		expect(bookingGenderInputOne["_wrapperState"]["initialChecked"]).toBeTruthy();
 
 		expect(bookingGenderLabelOne).toHaveAttribute("for", "male");
 		expect(bookingGenderLabelOne).toHaveTextContent("مرد");
@@ -51,6 +54,9 @@ describe("BookingGender", () => {
 		expect(bookingGenderInputTwo).toHaveAttribute("id", "female");
 		expect(bookingGenderInputTwo).toHaveAttribute("name", "gender");
 		expect(bookingGenderInputTwo).toHaveAttribute("value", "female");
+		expect(bookingGenderInputTwo).not.toBeChecked();
+		expect(bookingGenderInputTwo["checked"]).toBeFalsy();
+		expect(bookingGenderInputTwo["_wrapperState"]["initialChecked"]).toBeFalsy();
 
 		expect(bookingGenderLabelTwo).toHaveAttribute("for", "female");
 		expect(bookingGenderLabelTwo).toHaveTextContent("زن");
