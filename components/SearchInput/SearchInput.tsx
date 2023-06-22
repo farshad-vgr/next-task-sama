@@ -1,10 +1,11 @@
 import { Dispatch, SetStateAction, memo } from "react";
+import Fuse from "fuse.js";
 
 interface Props {
 	hospitals: {}[];
 	searchValue: string;
 	setSearchValue: Dispatch<SetStateAction<string>>;
-	setResults: Dispatch<any>;
+	setResults: Dispatch<Fuse.FuseResult<{}>[]>;
 }
 
 const SearchInput = ({ hospitals, searchValue, setSearchValue, setResults }: Props) => {
@@ -17,9 +18,6 @@ const SearchInput = ({ hospitals, searchValue, setSearchValue, setResults }: Pro
 					setSearchValue(e.target.value);
 
 					const { value } = e.currentTarget;
-
-					// Dynamically import module fuse.js to find a value in a list
-					const Fuse = (await import("fuse.js")).default;
 
 					const fuse = new Fuse(hospitals, { threshold: 0.3, keys: ["title"] });
 

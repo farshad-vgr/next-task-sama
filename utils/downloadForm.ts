@@ -1,7 +1,7 @@
 import { jsPDF } from "jspdf";
 import { toPng } from "html-to-image";
 
-export async function downloadForm(refElement: any) {
+export async function downloadForm(refElement: HTMLFormElement) {
 	const screenImage = await toPng(refElement, { quality: 1 });
 	const pdfFile = new jsPDF();
 

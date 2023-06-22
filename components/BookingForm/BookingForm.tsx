@@ -16,7 +16,7 @@ const initialStates = {
 const BookingForm = () => {
 	const [bookingFormValues, setBookingFormValues] = useState(initialStates);
 	const [formDownloadable, setFormDownloadable] = useState(false);
-	const ref = useRef<any>();
+	const ref = useRef<HTMLFormElement>(null);
 
 	return (
 		<>
@@ -28,19 +28,18 @@ const BookingForm = () => {
 
 					console.table(bookingFormValues);
 
-					// Dynamically load toastify (name import)
+					// Dynamically import toastify module (name import)
 					const toast = await import("react-toastify").then((mod) => mod.toast);
 
 					toast.success(
-						`نوبت برای ${
-							bookingFormValues.gender === "male"
-								? "آقای " + bookingFormValues.firstName + " " + bookingFormValues.lastName
-								: "خانم " + bookingFormValues.firstName + " " + bookingFormValues.lastName
+						`نوبت برای ${bookingFormValues.gender === "male" ? "آقای " : "خانم "} ${
+							bookingFormValues.firstName + " " + bookingFormValues.lastName
 						} ثبت شد!`,
 						{
 							position: toast.POSITION.TOP_CENTER,
 						},
 					);
+
 					setFormDownloadable(true);
 				}}>
 				<BookingFirstName bookingFormValues={bookingFormValues} setBookingFormValues={setBookingFormValues} placeHolder="نام" />

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import Fuse from "fuse.js";
 
 //Dynamic SearchInput and SearchResultList component import
 const SearchInput = dynamic(() => import("../SearchInput/SearchInput"));
@@ -61,7 +62,7 @@ const hospitals = [
 export default function SearchButton() {
 	const [elementWidth, setElementWidth] = useState("w-10");
 	const [searchValue, setSearchValue] = useState("");
-	const [results, setResults] = useState([{}]);
+	const [results, setResults] = useState<Fuse.FuseResult<{}>[]>([]);
 
 	return (
 		<>
@@ -71,7 +72,7 @@ export default function SearchButton() {
 				onClick={() => {
 					setElementWidth((prevValue) => (prevValue === "w-10" ? "w-52 sm:w-80" : "w-10"));
 					setSearchValue("");
-					setResults([{}]);
+					setResults([]);
 				}}
 				className={`${elementWidth} min-h-[2.5rem] p-1 rounded-[1.25rem] text-base bg-red-700 text-white hover:bg-red-600 hover:cursor-pointer transition-all duration-500`}>
 				{elementWidth === "w-52 sm:w-80" ? (

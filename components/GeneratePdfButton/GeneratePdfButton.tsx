@@ -1,10 +1,10 @@
-import { memo } from "react";
+import { RefObject, memo } from "react";
 import { downloadForm } from "../../utils/downloadForm";
 
 interface Props {
 	btnText: string;
 	isDisable: boolean;
-	formData: any;
+	formData: RefObject<HTMLFormElement>;
 }
 
 const GeneratePdfButton = ({ btnText, isDisable, formData }: Props) => {
@@ -16,7 +16,7 @@ const GeneratePdfButton = ({ btnText, isDisable, formData }: Props) => {
 				className={`flex justify-center items-center self-center gap-1 max-w-fit px-3 outline-none rounded-lg download-button ${
 					isDisable ? "cursor-not-allowed text-black bg-slate-500 opacity-50" : "cursor-pointer text-white bg-blue-400"
 				}`}
-				onClick={() => downloadForm(formData.current)}
+				onClick={() => downloadForm(formData.current!)}
 				disabled={isDisable}>
 				<svg
 					data-testid="generate-pdf-button-svg"

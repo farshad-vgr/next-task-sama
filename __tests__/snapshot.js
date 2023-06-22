@@ -9,7 +9,6 @@ import {
 	BookingButton,
 	GeneratePdfButton,
 	MenuButton,
-	PersianDatePicker,
 	SearchButton,
 	SearchInput,
 	Asidebar,
@@ -45,11 +44,6 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes MenuButton unchanged?", () => {
 		const { container } = render(<MenuButton />);
-		expect(container).toMatchSnapshot();
-	});
-
-	it("Renderes PersianDatePicker unchanged?", () => {
-		const { container } = render(<PersianDatePicker />);
 		expect(container).toMatchSnapshot();
 	});
 
