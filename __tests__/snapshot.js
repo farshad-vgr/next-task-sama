@@ -8,6 +8,8 @@ import {
 	ConfirmForm,
 	BookingButton,
 	GeneratePdfButton,
+	BookingInsurance,
+	BookingGender,
 	MenuButton,
 	SearchButton,
 	SearchInput,
@@ -34,6 +36,16 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes GeneratePdfButton unchanged?", () => {
 		const { container } = render(<GeneratePdfButton btnText="دانلود فرم" isDisable={true} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes BookingInsurance unchanged?", () => {
+		const { container } = render(<BookingInsurance />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes BookingGender unchanged?", () => {
+		const { container } = render(<BookingGender />);
 		expect(container).toMatchSnapshot();
 	});
 

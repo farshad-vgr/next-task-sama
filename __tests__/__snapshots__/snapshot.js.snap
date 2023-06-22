@@ -201,6 +201,102 @@ exports[`Snapshot Testing Renderes BookingButton unchanged? 1`] = `
 </div>
 `;
 
+exports[`Snapshot Testing Renderes BookingGender unchanged? 1`] = `
+<div>
+  <section>
+    <div
+      class="relative flex justify-start w-full overflow-hidden"
+      data-testid="booking-gender-container"
+    >
+      <label
+        class="me-2"
+        data-testid="booking-gender-title"
+      >
+        جنسیت:
+      </label>
+      <input
+        checked=""
+        class="me-1 mb-1 accent-red-700"
+        data-testid="booking-gender-input-one"
+        id="male"
+        name="gender"
+        type="radio"
+        value="male"
+      />
+      <label
+        class="me-4"
+        data-testid="booking-gender-label-one"
+        for="male"
+      >
+        مرد
+      </label>
+      <input
+        class="me-1 mb-1 accent-red-700"
+        data-testid="booking-gender-input-two"
+        id="female"
+        name="gender"
+        type="radio"
+        value="female"
+      />
+      <label
+        data-testid="booking-gender-label-two"
+        for="female"
+      >
+        زن
+      </label>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Snapshot Testing Renderes BookingInsurance unchanged? 1`] = `
+<div>
+  <section>
+    <div
+      class="relative flex justify-start w-full overflow-hidden"
+      data-testid="booking-insurance-container"
+    >
+      <label
+        class="me-2"
+        data-testid="booking-insurance-title"
+      >
+        بیمه درمانی:
+      </label>
+      <input
+        checked=""
+        class="me-1 mb-2 accent-red-700"
+        data-testid="booking-insurance-input-one"
+        id="false"
+        name="insurance"
+        type="radio"
+        value="false"
+      />
+      <label
+        class="me-4"
+        data-testid="booking-insurance-label-one"
+        for="false"
+      >
+        ندارد
+      </label>
+      <input
+        class="me-1 mb-2 accent-red-700"
+        data-testid="booking-insurance-input-two"
+        id="true"
+        name="insurance"
+        type="radio"
+        value="true"
+      />
+      <label
+        data-testid="booking-insurance-label-two"
+        for="true"
+      >
+        دارد
+      </label>
+    </div>
+  </section>
+</div>
+`;
+
 exports[`Snapshot Testing Renderes CloseButton unchanged? 1`] = `
 <div>
   <button

@@ -29,7 +29,7 @@ const BookingForm = () => {
 					console.table(bookingFormValues);
 
 					// Dynamically import toastify module (name import)
-					const toast = await import("react-toastify").then((mod) => mod.toast);
+					const toast = await import("react-toastify").then((module) => module.toast);
 
 					toast.success(
 						`نوبت برای ${bookingFormValues.gender === "male" ? "آقای " : "خانم "} ${
