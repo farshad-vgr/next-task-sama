@@ -10,6 +10,8 @@ import {
 	GeneratePdfButton,
 	BookingInsurance,
 	BookingGender,
+	BookingLastName,
+	BookingFirstName,
 	MenuButton,
 	SearchButton,
 	SearchInput,
@@ -46,6 +48,16 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes BookingGender unchanged?", () => {
 		const { container } = render(<BookingGender />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes BookingLastName unchanged?", () => {
+		const { container } = render(<BookingLastName />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes BookingFirstName unchanged?", () => {
+		const { container } = render(<BookingFirstName />);
 		expect(container).toMatchSnapshot();
 	});
 

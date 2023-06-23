@@ -18,7 +18,14 @@ const BookingFirstName = ({ bookingFormValues, setBookingFormValues, placeHolder
 			<section>
 				<div className="relative flex justify-center w-full overflow-hidden">
 					<div className="flex justify-center items-center absolute right-0 w-10 h-10 leading-8 outline-none text-white bg-red-700 border-b-[3px] border-b-red-700 rounded-[0_0.5rem_0_0]">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+						<svg
+							data-testid="booking-lastname-input-svg"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							strokeWidth={1.5}
+							stroke="currentColor"
+							className="w-6 h-6">
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"
@@ -28,14 +35,15 @@ const BookingFirstName = ({ bookingFormValues, setBookingFormValues, placeHolder
 					</div>
 
 					<input
+						data-testid="booking-lastname-input"
 						className="py-2 px-4 pr-12 pb-0 w-full h-10 outline-none text-sm border-b-[3px] border-b-red-700 rounded-[0.5rem_0.5rem_0_0]"
 						required
 						type="text"
 						placeholder={placeHolder}
 						minLength={3}
 						maxLength={15}
-						value={bookingFormValues.lastName}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBookingFormValues({ ...bookingFormValues, lastName: e.target.value })}
+						value={bookingFormValues?.lastName}
+						onChange={(e) => setBookingFormValues({ ...bookingFormValues, lastName: e.target.value })}
 					/>
 				</div>
 			</section>
