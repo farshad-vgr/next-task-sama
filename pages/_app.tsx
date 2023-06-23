@@ -39,5 +39,5 @@ export default function App({ Component, pageProps }: AppProps) {
 
 // This function allows you to analyze and measure the performance of pages using different metrics
 export function reportWebVitals(metric: NextWebVitalsMetric) {
-	console.table(metric);
+	// console.table(metric);
 }

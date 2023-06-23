@@ -12,6 +12,7 @@ import {
 	BookingGender,
 	BookingLastName,
 	BookingFirstName,
+	BookingForm,
 	MenuButton,
 	SearchButton,
 	SearchInput,
@@ -58,6 +59,11 @@ describe("Snapshot Testing", () => {
 
 	it("Renderes BookingFirstName unchanged?", () => {
 		const { container } = render(<BookingFirstName />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("Renderes BookingForm unchanged?", () => {
+		const { container } = render(<BookingForm />);
 		expect(container).toMatchSnapshot();
 	});
 

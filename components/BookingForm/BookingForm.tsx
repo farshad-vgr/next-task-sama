@@ -21,12 +21,13 @@ const BookingForm = () => {
 	return (
 		<>
 			<form
+				data-testid="booking-form"
 				ref={ref}
 				className="flex flex-col justify-center gap-4 w-full"
-				onSubmit={async (e: React.FormEvent<HTMLFormElement>) => {
+				onSubmit={async (e) => {
 					e.preventDefault();
 
-					console.table(bookingFormValues);
+					// console.table(bookingFormValues);
 
 					// Dynamically import toastify module (name import)
 					const toast = await import("react-toastify").then((module) => module.toast);
