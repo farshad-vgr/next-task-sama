@@ -5,6 +5,7 @@
 @font-face {
 	font-family: "IranSansMedium";
 	src: url("/assets/fonts/IRANSansMobile_Medium.ttf");
+	font-display: swap;
 }
 
 :root {
